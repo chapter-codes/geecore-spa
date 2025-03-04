@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'century-gothic';
+  src: url('./assets/fonts/CenturyGothic.ttf')format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Quarts-pachino';
+  src: url('./assets/fonts/Quarts\ Pachino\ Demo\ Version.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Luxia-Display';
+  src: url('./assets/fonts/Luxia/Luxia-Display.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Europa-Nuova';
+  src: url('./assets/fonts/europanova/EuropaNuovaRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /* colors */
+  --primary-color: #E35F00;
+  --active-primary-color: #833700;
+  --secondary-color: #303030;
+  --tertiary-color: #7D7D7D;
+  --packages-text-color: #9A9A9A;
+  --recommended-plan-btn-color: #453122;
+  --blog-text-color: #121416;
+  --blog-duration-text-color: #7D7D7D;
+  --send-a-message-color:#333333;
+  --footer-heading-color: #D3D8DE;
+  --slide-control-button-color:#E7C298;
+  
+  
+
+  /* bg colours */
+  --bg-primary: #FFF1E8;
+  --bg-header: #362619CC;
+  --bg-blog-post-tag:#453122B2;
+
+  /* fonts */
+  --font-primary: 'Quarts-pachino', sans-serif;
+  --font-secondary: 'Luxia-Display', sans-serif;
+  --font-tertiary: 'Century Gothic', sans-serif;
+  --font-mulish: 'Mulish', serif;
+  --font-montserrat: 'Montserrat', serif;
+  --font-recommended-plan: 'Poppins', serif;
+  --font-blog-post-duration: 'Europa-Nuova', serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+.font-century-gothic {
+  font-family: 'century-gothic', sans-serif;
+}
+
+.font-mulish-800{
+    font-family: "Mulish", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+.font-montserrat {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+  .font-quarts-pachino {
+    font-family: 'Quarts-pachino', sans-serif;
+  }
+
+  .font-luxia-display {
+    font-family: 'Luxia-Display', sans-serif;
+  }
+  
+  /* background colours */
+  .bg-header{
+    background-color: #362619CC
+  }
+
+
+  /* text colors  */
+  .text-color-highlight {
+    color: #7D7D7D;
+  }
+  .text-color-section {
+    color: #E35F00;
+  }
+  
+
+/* border colors */
+.boder-color-highlight {
+    border-color: #9A9A9A;
+}
+  /* animations */
+  @keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.animate-slide-in {
+    animation: slideIn 1s ease-out forwards;
+}
+

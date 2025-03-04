@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spa Website</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Mulish:ital,wght@0,800;1,800&family=Poppins:wght@400;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+        <!-- Header Section -->
+    <section id="header" class="absolute top-6  left-0 z-10 w-full " >
+        <section id="header-wrapper" class=" flex justify-between items-center gap-4 xl:gap-24 px-12 py-4 mx-24 bg-[var(--bg-header)] overflow-hidden rounded-2xl">
+            <section id='header-brand' class="flex gap-2 border-r  items-center">
+                <section id="brand-logo" >
+                    <img src="./assets/images/Logo.svg" alt="logo">
+                </section>
+                <section id="brand-name" class="mr-8" >
+                    <h1 class="text-white text-lg font-mulish-800">Wivali AI</h1>
+                </section>
+            </section>
+
+            <section id="header-navigation " class="grow flex ">
+                <ul class="hidden  md:flex justify-between items-center w-full space-x-6 text-white text-xs font-century-gothic">
+                    <li> <a href="#" class="hover:text-orange-400 ">Home</a> </li>
+                    <li> <a href="#about-us" class="hover:text-orange-400 ">About Us</a> </li>
+                    <li> <a href="#services" class="hover:text-orange-400">Services</a> </li>
+                    <li> <a href="#contact-us" class="hover:text-orange-400">Contact Us</a> </li>
+                    <li> <a href="#packages" class="hover:text-orange-400">Packages</a> </li>
+                    <li> <a href="#blog" class="hover:text-orange-400">Blog</a> </li>
+                </ul>
+            </section>
+        
+            <section id='header-socials' class="flex space-x-4 text-white">
+                <a href="#y" > <img src="./assets/./images/iconoir_youtube.svg" alt="youtube link " /> </a>
+                <a href="#"> <img src="./assets/images/ant-design_instagram-outlined.svg" alt="instagram link" /> </a>
+                <a href="#"> <img src="./assets/images/la_facebook.svg" alt="facebook link" /> </a>
+            </section>
+        </section>
+    </section>
+
+    <section id="hero" class="relative w-full h-screen flex flex-col justify-center items-center md:pl-52 lg:pl-72  bg-cover bg-center" style="background-image: url('./assets/images/hero.svg');">
+        <section id="hero-content" class="text-white text-left relative">
+            <h2 class="text-[12rem] font-quarts-pachino relative top-[5rem] left-[-10rem] transition-all duration-[3000] animate-slide-in">Rejuvenate</h2>
+            <p class="text-[3.5rem] mt-2 font-montserrat">Your Mind & Body</p>
+
+            <p class="mt-1 text-sm font-century-gothic max-w-[22rem] text-left leading-7">Experience ultimate relaxation with expert treatments in a tranquil spa, blending luxury, care, and eco-friendly wellness for rejuvenation.</p>
+            <button href="#" class=" flex justify-between items-center inline-block bg-[var(--primary-color)] text-white px-4 py-2 mt-8 rounded-lg w-[22rem] text-lg  hover:bg-[var(--active-primary-color)] transition self-start">
+                <p>Book an Appointment </p>
+                <a href="#"><img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt=""></a>
+            </button>
+        </section>
+    </section>
+   
+    <section class="py-16 px-20 grid md:grid-cols-4 gap-8 text-center">
+        <section class="border-r-2 border-color-highlight px-4">
+            <img src="./assets/images/Group 1.svg" alt="Tranquil Spaces" class="mx-auto w-16">
+            <h2 class="text-lg font-medium mt-4 font-luxia-display">Tranquil Spaces</h2>
+            <p class="text-color-highlight text-sm font-century-gothic">Relax and rejuvenate in serene surroundings.</p>
+        </section>
+        <section class="border-r-2 border-color-highlight px-4">
+            <img src="./assets/images/Group.png" alt="Expert Therapists" class="mx-auto w-16">
+            <h2 class="text-lg font-medium mt-4 font-luxia-display">Expert Therapists</h2>
+            <p class="text-gray-600 text-sm font-century-gothic">Professional care tailored to your needs.</p>
+        </section>
+        <section class="border-r-2 border-color-highlight px-4">
+            <img src="./assets/images/Isolation_Mode.png" alt="Eco-Friendly" class="mx-auto w-16">
+            <h2 class="text-lg font-medium mt-4 font-luxia-display">Eco-Friendly Practices</h2>
+            <p class="text-gray-600 text-sm font-century-gothic">Sustainable treatments for a healthier planet.</p>
+        </section>
+        <section class="px-4">
+            <img src="./assets/images/Vector.svg" alt="Customized Packages" class="mx-auto w-16">
+            <h2 class="text-lg font-medium mt-4 font-luxia-display">Customized Packages</h2>
+            <p class="text-gray-600 text-sm font-century-gothic">Personalized plans to suit your preferences.</p>
+        </section>
+    </section>
+    
+    <section id="about-us" class="flex flex-col md:flex-row items-center px-8 py-16 gap-8">
+        <img src="./assets/images/131503497474.svg" alt="Spa Treatment" class="w-full md:w-1/2 rounded-lg shadow-lg">
+        <section class="md:w-1/2">
+            <h2 class="text-orange-600 text-4xl text-color-section font-quarts-pachino">About Us</h2>
+            <h3 class="text-3xl font-luxia-display mt-2 fo">A serene haven offering expert spa</h3>
+            <p class="text-[var(--tertiary-color)] text-sm font-century-gothic my-16">Luxury Beauty Spa is committed to delivering exceptional spa treatments designed for relaxation and rejuvenation. With our skilled therapists, eco-friendly products, and tranquil environment, we create the perfect escape from daily stress.</p>
+            <button class=" flex justify-between items-center bg-orange-600 text-white px-6 py-1 rounded-lg shadow-md hover:bg-[var(--active-primary-color)] transition">
+                <p class="font-century-gothi text-sm pr-8">Explore More</p>
+                <a href="#"><img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt=""></a>
+            </button>
+        </section>
+    </section>
+
+  
+    <section id="services" class="bg-[var(--bg-primary)] pt-16 pb-24 px-8 text-center flex flex-col items-center">
+        <h2 class="text-4xl text-[var(--primary-color)] text-[var(--active-primary-color)] [font-family:var(--font-primary)] ">Services</h2>
+        <h3 class="text-2xl [var(--tertiary-color)] [font-family:var(--font-secondary)] my-4 max-w-[600px]">A serene haven offering expert spa treatments, relaxation, and rejuvenation for ultimate well-being.</h3>
+        <section id="carousel-wrapper" class="overflow-hidden relative w-full">
+            <section id="carousel" class="relative flex gap-4 [font-family:var(--font-secondary)] text-[var(--secondary-color)] mt-6 px-12 ">
+                <section id="slide-1" class="absolute left-0 top-0 flex gap-8">
+                    <section class="flex flex-col items-center rounded-lg ">
+                        <img src="./assets/images/messagetherapy.png" alt="Massage Therapy" class="w-full rounded-lg">
+                        <h4 class="text-lg  mt-4 ">Massage Therapy</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)] max-w-[300px]">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                    <section class="flex flex-col items-center rounded-lg ">
+                        <img src="./assets/images/facial-treatments.png" alt="Facial Treatments" class="w-full rounded-lg">
+                        <h4 class="text-lg  mt-4">Facial Treatments</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)] max-w-[300px]">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                    <section class="flex flex-col items-center rounded-lg ">
+                        <img src="./assets/images/cute-mother-daughter-home-pajamas@2x.png" alt="Nail Care" class="w-full rounded-lg">
+                        <h4 class="text-lg mt-4">Nail Care</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)] max-w-[300px]">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                </section>
+                <section id="slide-2" class="absolute left-0 top-0 flex gap-8 mx-4">
+                    <section class="flex flex-col items-center rounded-lg ">
+                        <img src="./assets/images/massagetherapy2.png" alt="Massage Therapy" class="w-full rounded-lg">
+                        <h4 class="text-lg  mt-4 ">Massage Therapy</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)] max-w-[300px]">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                    <section class="flex flex-col items-center rounded-lg ">
+                        <img src="./assets/images/facial-treatment2.png" alt="Facial Treatments" class="w-full rounded-lg">
+                        <h4 class="text-lg  mt-4">Facial Treatments</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)] max-w-[300px]">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                    <section class="flex flex-col items-center rounded-lg ">
+                        <img src="./assets/images/nailcare2.png" alt="Nail Care" class="w-full rounded-lg">
+                        <h4 class="text-lg mt-4">Nail Care</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)] max-w-[300px]">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                </section>
+                <section id="slide-3" class="absolute top-0 left-0 flex gap-8">
+                    <section class="flex flex-col items-center rounded-lg ">
+                        <img src="./assets/images/massagetherapy3.png" alt="Massage Therapy" class="w-full rounded-lg">
+                        <h4 class="text-lg  mt-4 ">Massage Therapy</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)] max-w-[300px]">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                    <section class="flex flex-col items-center rounded-lg ">
+                        <img src="./assets/images/facial-treatment3.png" alt="Facial Treatments" class="w-full rounded-lg">
+                        <h4 class="text-lg  mt-4">Facial Treatments</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)] max-w-[300px]">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                    <section class="flex flex-col items-center rounded-lg ">
+                        <img src="./assets/images/nailcare3.png" alt="Nail Care" class="w-full rounded-lg">
+                        <h4 class="text-lg mt-4">Nail Care</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)] max-w-[300px]">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                </section>
+            </section>
+        </section>  
+        <section id="slide-buttons" class=" flex justify-center items-center gap-4 w-full mt-24">
+            <button class="w-14 h-1 rounded-lg bg-[var(--primary-color)] transition-[color] my-8"></button>
+            <button class="w-14 h-1 rounded-lg bg-[var(--primary-color)] transition-[color] my-8"></button>
+            <button class="w-14 h-1 rounded-lg bg-[var(--primary-color)] transition-[color] my-8"></button>
+        </section> 
+    </section>
+    
+    <section id="packages" class="flex flex-col items-center pt-32">
+        <h2 class="text-4xl text-[var(--primary-color)] [font-family:var(--font-primary)]">Pricing Packages</h2>
+        <h3 class="text-2xl [var(--tertiary-color)] text-center [font-family:var(--font-secondary)] my-4 max-w-[400px]">Tailored Spa Packages Designed to Suit Your Needs and Budget</h3>
+        <section id="cards" class="flex gap-8 mx-32 mt-16 [font-family:var(--font-tertiary)] text-xs">
+            <section class="pt-20" >
+                <h4 class="[font-family:var(--font-secondary)] text-3xl">$49 <span class="[font-family:var(--font-tertiary)] text-sm text-[var(--packages-text-color)]" >/month</span></h4>
+                <h3 class="text-3xl [font-family:var(--font-secondary)] mt-6 mb-4">Basic Plan</h3>
+                <p class="text-[var(--packages-text-color)] mb-8">Essential relaxation for a refreshing experience.</p>
+               <ul class="flex flex-col gap-4 text-[font-family:var(--font-tertiary)] text-[var(--packages-text-color)] ">
+                    <li class="flex items-center gap-2"><img src="./assets/images/check-circle-1.svg" alt="checked circle image" width="20px"/> 30-Minute Swedish Massage</li>
+                    <li class="flex items-center gap-2"><img src="./assets/images/check-circle-1.svg" alt="checked circle image" width="20px"/> Access to Sauna & Steam (4x/month)</li>
+                    <li class="flex items-center gap-2"><img src="./assets/images/check-circle-1.svg" alt="checked circle image" width="20px"/> Personalized Skincare Consultation</li>
+                    <li class="flex items-center gap-2"><img src="./assets/images/check-circle-1.svg" alt="checked circle image" width="20px"/> 10% Discount on Additional Services</li>
+                </ul>
+                <button class="flex items-center gap-6 transition bg-[var(--primary-color)] hover:bg-[var(--active-primary-color)] text-white py-2 px-6 rounded-lg mt-8  ">
+                    <p class="text-[var(--font-tertiary)]">Choose plan</p>
+                    <a href="#"><img src="./assets/images/material-symbols_arrow-back-rounded.svg" width="20px" alt="choose plan"></a>
+                </button>
+            </section>
+        
+            <section class="relative flex flex-col items-center bg-[var(--primary-color)]  text-white pt-20 pb-16 px-6 rounded-md">
+                <p id="badge" class="absolute top-4 right-4 bg-[var(--recommended-plan-btn-color)] text-white text-xs py-2 px-4 rounded-2xl [font-family:var(--font-recommended-plan)] font-extrabold">MOST POPULAR</p>
+                <h4 class="[font-family:var(--font-secondary)] text-3xl w-full">$129 <span class="[font-family:var(--font-tertiary)] text-sm" >/month</span></h4>
+                <h3 class="text-3xl [font-family:var(--font-secondary)] mt-6 mb-4 w-full ">Premium Plan</h3>
+                <p class="mb-8">The ultimate self-care package for total wellness.</p>
+               <ul class="flex flex-col gap-4 text-[font-family:var(--font-tertiary)]">
+                    <li class="flex items-center gap-2"><img src="./assets/images/check-circle-1.svg" alt="checked circle image" width="20px"/> Hot Stone or Deep Tissue Massage</li>
+                    <li class="flex items-center gap-2"><img src="./assets/images/check-circle-1.svg" alt="checked circle image" width="20px"/> Unlimited Spa Lounge & Hydrotherapy Access</li>
+                    <li class="flex items-center gap-2"><img src="./assets/images/check-circle-1.svg" alt="checked circle image" width="20px"/> Monthly Body Scrub & Wrap</li>
+                    <li class="flex items-center gap-2"><img src="./assets/images/check-circle-1.svg" alt="checked circle image" width="20px"/> Priority Booking & VIP Perks</li>
+                    <li class="flex items-center gap-2"><img src="./assets/images/check-circle-1.svg" alt="checked circle image" width="20px"/> Complimentary Spa Gift Set</li>
+                </ul>
+                <button class="flex items-center justify-between gap-6 transition bg-[var(--recommended-plan-btn-color)] hover:bg-[var(--active-primary-color)] text-white py-2 px-6 rounded-lg mt-12">
+                    <p class="text-[var(--font-tertiary)]">Choose plan</p>
+                    <a href="#"><img src="./assets/images/material-symbols_arrow-back-rounded.svg" width="20px" alt="choose plan"></a>
+                </button>
+            </section>
+        
+            <section class="pt-20">
+                <h2 class="[font-family:var(--font-secondary)] text-3xl">$19 <span class="[font-family:var(--font-tertiary)] text-sm text-[var(--packages-text-color)]" >/month</span></h2>
+                <h3 class="text-3xl [font-family:var(--font-secondary)] mt-6 mb-4">Luxury Plan</h3>
+                <p class="text-[var(--packages-text-color)] mb-8">The perfect blend of relaxation and skincare.</p>
+               <ul class="flex flex-col gap-4 text-[font-family:var(--font-tertiary)] text-[var(--packages-text-color)]  ">
+                    <li class="flex items-center gap-2"><img src="./assets/images/check-circle-1.svg" alt="checked circle image" width="20px"/> Full-body Aromatherapy Massage</li>
+                    <li class="flex items-center gap-2"><img src="./assets/images/check-circle-1.svg" alt="checked circle image" width="20px"/> Unlimited Access to Sauna & Steam Room</li>
+                    <li class="flex items-center gap-2"><img src="./assets/images/check-circle-1.svg" alt="checked circle image" width="20px"/> Monthly Facial Treatment</li>
+                    <li class="flex items-center gap-2"><img src="./assets/images/check-circle-1.svg" alt="checked circle image" width="20px"/> Personalized Skincare Consultation</li>
+                </ul>
+                <button class="flex items-center gap-6 transition bg-[var(--primary-color)] hover:bg-[var(--active-primary-color)] text-white py-2 px-6 rounded-lg mt-8">
+                    <p class="text-[var(--font-tertiary)]">Choose plan</p>
+                    <a href="#"><img src="./assets/images/material-symbols_arrow-back-rounded.svg" width="20px" alt="choose plan"></a>
+                </button>
+            </section>
+        
+        </section>
+    </section>
+    
+    <section id="Testimonials" class="flex flex-col items-center mt-52">
+        <h2 class="text-4xl text-[var(--primary-color)] [font-family:var(--font-primary)]">Testimonials</h2>
+        <h3 class="text-2xl [var(--tertiary-color)] text-center [font-family:var(--font-secondary)] my-4 max-w-[400px]">Hear What Our Happy Clients Have to Say!</h3>
+        <section class="bg-[#fdf3e5] mt-8 p-6 rounded-lg shadow-md text-center max-w-2xl mx-auto">
+            <p class="text-orange-600 text-4xl">&ldquo;</p>
+            <p class="text-gray-600 mt-4">I love the aromatherapy massages and the serene ambiance. The staff is incredibly professional and welcoming.</p>
+            <h4 class="text-lg font-semibold mt-4">James M.</h4>
+            <section class="mt-2 border-t-2 border-orange-600 w-16 mx-auto"></section>
+        </section>
+    </section>
+    
+    <section id="blog" class=" flex flex-col items-center mt-52 ">
+        <h2  class="text-4xl text-[var(--primary-color)] [font-family:var(--font-primary)]">Blog</h2>
+        <h3  class="text-2xl [var(--tertiary-color)] text-center [font-family:var(--font-secondary)] my-4 max-w-[450px]">The Benefits of Regular Spa Treatments for Your Skin and Mind</h3>
+        <section id="blog-posts" class="flex justify-center gap-6 mt-20 px-10 text-[var(--blog-text-color)] [font-family:var(--font-tertiary)] font-bold">
+            <a id="post-one" href="#">
+                <section class="relative flex gap-4 items-center text-white" >
+                    <img src="./assets/images/blog-post-image-1.png" alt="blog post image" >
+                    <section class="absolute top-4 left-4 flex gap-4 text-[.6rem] [font-family:var(--font-tertiary)]">
+                        <p class="rounded-lg py-2 px-4  bg-[var(--bg-blog-post-tag)]"> Soothing Massages</p>
+                    <p class="rounded-lg py-2 px-4  bg-[var(--bg-blog-post-tag)]">Soothing Massages</p>
+                    </section>
+                    
+                </section>
+                <p class="mt-4 max-w-[400px] my-8">Self-care is essential for a balanced and healthy life. Experience deep relaxation with our luxury spa treatments.</p>
+                <section class="flex items-center  gap-2 text-base text-[var(--blog-duration-text-color)] [font-family:var(--font-blog-post-duration)] mt-12">
+                    <p>June 21,2022</p>
+                    <p class="w-5 h-px bg-[var(--blog-duration-text-color)]"></p>
+                    <section class="flex items-center gap-2">
+                        <img src="./assets/images/time.svg" alt="time image">
+                        <p class="italic">2 minute read</p>                        
+                    </section>
+                </section>
+            </a>
+            <a id="post-two" href="#">
+                <section class="relative flex gap-4 items-center text-white" >
+                    <img src="./assets/images/blog-post-2.png" alt="blog post image">
+                    <section class="absolute top-4 left-4 flex gap-4 text-[.6rem] [font-family:var(--font-tertiary)]">
+                        <p class="rounded-lg py-2 px-4  bg-[var(--bg-blog-post-tag)]"> Soothing Massages</p>
+                    <p class="rounded-lg py-2 px-4  bg-[var(--bg-blog-post-tag)]">Soothing Massages</p>
+                    </section>
+                </section>
+                <p class="mt-4 max-w-[400px]">Self-care is essential for a balanced and healthy life. Experience deep relaxation with our luxury spa treatments.</p>
+                <section class="flex items-center  gap-2 text-[var(--blog-duration-text-color)] mt-12 [font-family:var(--font-blog-post-duration)] ">
+                    <p>June 21,2022</p>
+                    <p class="w-5 h-px bg-[var(--blog-duration-text-color)]"></p>
+                    <section class="flex items-center gap-2">
+                        <img src="./assets/images/time.svg" alt="time image">
+                        <p class="italic">2 minute read</p>                        
+                    </section>
+                </section>
+            </a>
+            <a id="post-three" href="#">
+                <section class="relative flex gap-4 items-center text-white" >
+                    <img src="./assets/images/blog-post-image-3.png" alt="blog post image">
+                    <section class="absolute top-4 left-4 flex gap-4 text-[.6rem] [font-family:var(--font-tertiary)]">
+                        <p class="rounded-lg py-2 px-4  bg-[var(--bg-blog-post-tag)]"> Soothing Massages</p>
+                    <p class="rounded-lg py-2 px-4  bg-[var(--bg-blog-post-tag)]">Soothing Massages</p>
+                    </section>
+                </section>
+                <p class="mt-4 max-w-[400px] ">Self-care is essential for a balanced and healthy life. Experience deep relaxation with our luxury spa treatments.</p>
+                <section class="flex items-center  gap-2 text-[var(--blog-duration-text-color)] [font-family:var(--font-blog-post-duration)] mt-12">
+                    <p>June 21,2022</p>
+                    <p class="w-5 h-px bg-[var(--blog-duration-text-color)]"></p>
+                    <section class="flex items-center gap-2">
+                        <img src="./assets/images/time.svg" alt="time image">
+                        <p class="italic">2 minute read</p>                        
+                    </section>
+                </section>
+            </a>
+            
+            <!-- <section id="post-two">
+                <section class="[background-image:url('./assets/images/blog-post-image-1.png')] bg-cover w-[200px] h-[200px] lg:w-[250px] lg:h-[250px] " >
+                </section>
+                <p class="text-gray-600 mt-4 max-w-[400px]">Self-care is essential for a balanced and healthy life. Experience deep relaxation with our luxury spa treatments.</p>
+            </section>
+            <section id="post-two">
+                <section class="[background-image:url('./assets/images/blog-post-image-1.png')] bg-cover w-[200px] h-[200px] lg:w-[250px] lg:h-[250px] " >
+                </section>
+                <p class="text-gray-600 mt-4 max-w-[400px]">Self-care is essential for a balanced and healthy life. Experience deep relaxation with our luxury spa treatments.</p>
+            </section>            -->
+    </section>
+
+    <section class="flex flex-col bg-[var(--bg-primary)] mt-40 w-4/5 [font-family:var(--font-recommended-plan)] text-[.9rem] text-[var(--tertiary-color)] px-8 py-12 rounded-lg">
+        <h2 class="text-2xl  text-[var(--send-a-message-color)] [font-family:var(--font-secondary)]">Send a Message</h2>
+        <p class="pt-2">Your email address will not be published. Required fields are marked *</p>
+        <form class="flex flex-col mt-6 ">
+            <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg mb-4">
+            <input type="email" placeholder="Email" class="w-full p-3 border rounded-lg mb-4">
+            <textarea placeholder="Message" class="w-full p-3 border rounded-lg mb-4 h-32" ></textarea>
+            <button type="'submit"  class="self-end flex justify-between items-center  bg-[var(--primary-color)] hover:bg-[var(--active-primary-color)] text-white text-base px-4 py-2 mt-8 w-52 rounded-lg    transition">
+                <p>Send</p>
+                <a ><img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt="link"></a>
+            </button>
+        </form>
+    </section>
+
+    <section  class="my-32 flex flex-col items-center w-4/5">
+        <h2 class="text-2xl  text-[var(--send-a-message-color)] [font-family:var(--font-secondary)] max-w-[450px] text-center">Sign up for our newsletter to get update information, insight, or news.</h2>
+        <form class="flex justify-between items-center border border-[var(--tertiary-color)] mt-12 rounded-lg p-2 md:w-3/5 max-w-[600px] [font-family:var(--font-recommended-plan)] text-base text-[var(--tertiary-color)]">
+            <input type="email" name="email" id="email" placeholder="Email" class="pl-3 outline-none focus-visible:border-0">
+            <button type="'submit"  class="self-end flex justify-between items-center  bg-[var(--primary-color)] hover:bg-[var(--active-primary-color)] text-white text-base px-4 py-1 w-52 rounded-lg    transition">
+                <p>Subscribe</p>
+                <a ><img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt="link"></a>
+            </button>
+        </form>
+    </section>
+
+    <section id="footer" class=" text-white text-[0.9rem] bg-[var(--secondary-color)] [font-family:var(--font-tertiary)] w-full pt-12 pb-8 px-16" >
+        <section class="flex justify-between ">
+            <section id='footer-brand' class="grow">
+                <section class="flex items-center gap-2">
+                    <section id="brand-logo" >
+                        <img src="./assets/images/Logo.svg" alt="logo">
+                    </section>
+                    <section id="brand-name" class="mr-8" >
+                        <h1 class="text-white text-lg font-mulish-800">Wivali AI</h1>
+                    </section>
+                </section>  
+            </section>
+            <section id="footer-brand-services-and-info " class="grow flex justify-between gap-12">
+                <section id="footer-brand-services">
+                    <h3 class="text-sm text-[var(--footer-heading-color)] pb-12">Services</h3>
+                    <ul>
+                        <li class="hover:text-[var(--primary-color)] transition-[color]">Message Therapy</li>
+                        <li class="hover:text-[var(--primary-color)] transition-[color]">Facial Treatments</li>
+                        <li class="hover:text-[var(--primary-color)] transition-[color]">Body Treatments</li>
+                        <li class="hover:text-[var(--primary-color)] transition-[color]">Nail Care</li>
+                        <li class="hover:text-[var(--primary-color)] transition-[color]">Hair Removal</li>
+                        <li class="hover:text-[var(--primary-color)] transition-[color]">Relaxation Lounge</li>
+                    </ul>
+                </section>
+                <section id="footer-brand-info">
+                    <h3 class="text-sm text-[var(--footer-heading-color)] pb-12">Info</h3>
+                    <ul>
+                        <li class="hover:text-[var(--primary-color)] transition-[color]"><a href='#'>Home</a></li>
+                        <li class="hover:text-[var(--primary-color)] transition-[color]"><a href='#about-us'>About Us</a></li>
+                        <li class="hover:text-[var(--primary-color)] transition-[color]"><a href='#contact-us'>Contact Us</a></li>
+                        <li class="hover:text-[var(--primary-color)] transition-[color]"><a href='#packages'>Packages</a></li>
+                        <li class="hover:text-[var(--primary-color)] transition-[color]"><a href='#blog'>Blog</a></li>
+                    </ul>
+                 </section>
+                <section>
+                    <button class="flex items-center justify-between bg-[var(--primary-color)] text-white max-w-52 flex-grow-0 h-auto p-1 px-4 rounded-lg hover:bg-[var(--active-primary-color)] transition-['bacground-color']">
+                        <p>Consultation</p>
+                        <a href="#"><img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt="link"></a>
+                    </button>
+                </section>
+            </section>
+        </section>
+        <section class="flex flex-col lg:flex-row justify-between items-center mt-32">
+            <section id="footer-brand-socials" class="grow flex gap-4">
+                <a href="#" class="flex items-center justify-center border border-white/20 rounded-full  w-12 h-12 "> <img src="./assets/images/facebook-logo-2.svg" alt="facebook link" /> </a>
+                <a href="#" class="flex items-center justify-center border border-white/20 rounded-full w-12 h-12 "> <img src="./assets/images/ant-design_instagram-outlined.svg" alt="instagram link" > </a>
+            </section>
+            <section class="grow flex justify-between lg:items-end gap-12 [font-family:var(--font-tertiary)] text-[0.9rem]">
+                <section class="text-[var]">
+                    <section class="w-16 h-[0.1rem] bg-[var(--active-primary-color)] mb-8 "></section>
+                    <p>+1 891 989-11-91</p>
+                    <p>info@logoipsum.com</p>
+                </section>
+                <section>
+                    <p class="text-[var(--footer-heading-color)]">© 2023 — Copyright</p>
+                </section>
+            </section>
+        </section>        
+    </section>
+
+    <script src="./app.js"></script>
+</body>
+</html>
+
+
