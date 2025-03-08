@@ -78,13 +78,19 @@
         </section>
     </section>
     
-    <section id="about-us" class="flex flex-col md:flex-row items-center px-8 py-16 gap-8">
-        <img src="./assets/images/131503497474.svg" alt="Spa Treatment" class="w-full md:w-1/2 rounded-lg shadow-lg">
-        <section class="md:w-1/2">
-            <h2 class="text-orange-600 text-4xl text-color-section font-quarts-pachino">About Us</h2>
+    <section id="about-us" class="flex flex-col md:flex-row items-center justify-center px-8 py-16 gap-8">
+        <section id="bar-section" class="flex items-end rounded-lg overflow-hidden">
+            <section id="bars-wrapper" class="flex h-full">
+                <div class="bar py-20 w-3 bg-[var(--primary-color)] transition-[height] trasition-[padding] duration-[1000ms]"></div>
+                <div class="bar py-20 w-2 bg-[var(--bg-abt-us-bar-color)] transition-[height] trasition-[padding] duration-[1000ms]"></div>
+            </section>
+        <img src="./assets/images/131503497474.svg" alt="Spa Treatment" >
+        </section>
+        <section class="">
+            <h2 class="text-[var(--primary-color)] text-4xl text-color-section font-quarts-pachino">About Us</h2>
             <h3 class="text-3xl font-luxia-display mt-2 fo">A serene haven offering expert spa</h3>
-            <p class="text-[var(--tertiary-color)] text-sm font-century-gothic my-16">Luxury Beauty Spa is committed to delivering exceptional spa treatments designed for relaxation and rejuvenation. With our skilled therapists, eco-friendly products, and tranquil environment, we create the perfect escape from daily stress.</p>
-            <button class=" flex justify-between items-center bg-orange-600 text-white px-6 py-1 rounded-lg shadow-md hover:bg-[var(--active-primary-color)] transition">
+            <p class="text-[var(--tertiary-color)] text-base font-century-gothic my-16 max-w-[600px]">Luxury Beauty Spa is committed to delivering exceptional spa treatments designed for relaxation and rejuvenation. With our skilled therapists, eco-friendly products, and tranquil environment, we create the perfect escape from daily stress.</p>
+            <button class=" flex justify-between items-center bg-[var(--primary-color)] text-white px-6 py-1 rounded-lg shadow-md hover:bg-[var(--active-primary-color)] transition">
                 <p class="font-century-gothi text-sm pr-8">Explore More</p>
                 <a href="#"><img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt=""></a>
             </button>
@@ -96,7 +102,7 @@
         <h2 class="text-4xl text-[var(--primary-color)] text-[var(--active-primary-color)] [font-family:var(--font-primary)] ">Services</h2>
         <h3 class="text-2xl [var(--tertiary-color)] [font-family:var(--font-secondary)] my-4 max-w-[600px]">A serene haven offering expert spa treatments, relaxation, and rejuvenation for ultimate well-being.</h3>
         <section id="services-carousel-wrapper" class="overflow-hidden relative w-full">
-            <section id="services-carousel" class="relative gap-4 [font-family:var(--font-secondary)] text-[var(--secondary-color)] mt-6 px-12 ">
+            <section id="services-carousel" class="relative  gap-4 [font-family:var(--font-secondary)] text-[var(--secondary-color)] mt-6 px-12 ">
                 <section id="slide-1" class=" absolute w-full left-0 top-0 flex gap-8 px-8  mx-auto">
                     <section class="flex flex-col items-center rounded-lg ">
                         <img src="./assets/images/messagetherapy.png" alt="Massage Therapy" class="w-full rounded-lg">
@@ -219,7 +225,7 @@
         <h3 class="text-3xl [var(--tertiary-color)] text-center [font-family:var(--font-secondary)] my-4 min-w-[400px]">Hear What Our Happy Clients Have to Say!</h3>
 
         <section id="testimonial-carousel-wrapper" class="relative  w-full h-full overflow-hidden">
-            <section id="testimonial-carousel" class="relative left-0 top-0 flex mt-16 ">
+            <section id="testimonial-carousel" class="relative flex items-stretch left-0 top-0 flex mt-16 ">
                 <section class="slide-wrapper absolute flex w-full justify-center">
                     <section class="bg-[var(--bg-primary)] flex flex-col items-center px-16 pt-8 pb-12 rounded-lg w-[80vw] max-w-[1200px] mx-4">
                         <p class="text-[var(--primary-color)] text-9xl [font-family:var(--font-montserrat)]">&ldquo;</p>

@@ -197,3 +197,35 @@ function changeSlideBtnColor(index=0, multiplier, slidesLength, slideControlMeth
 // } , 5000) 
 
 
+
+const aboutUsBar = document.getElementById('bar-section')
+const bars= document.querySelectorAll('.bar')
+const barsSectionImage= document.querySelector('#bar-section').lastElementChild
+const barsSectionImageHeight= barsSectionImage.offsetHeight
+console.log(barsSectionImage, barsSectionImageHeight)
+window.onscroll= handleScroll
+
+function handleScroll(){
+    growBar()
+}
+
+function growBar(){
+    const rect= aboutUsBar.getBoundingClientRect()
+    const {top, bottom}= rect
+                        
+    if(top>0 && rect.bottom <= window.innerHeight){
+       //start animations   
+
+       bars.forEach(bar=>{
+        bar.style.padding=0;
+        bar.style.height= barsSectionImage.offsetHeight/2 +'px'
+       })
+    }else{
+        bars.forEach(bar=>{
+            bar.style.padding=0;
+            bar.style.height= barsSectionImage.offsetHeight/3 +'px'
+           })
+    }
+
+
+}
