@@ -87,9 +87,7 @@ html{
   }
   
   /* background colours */
-  .bg-header{
-    background-color: #362619CC
-  }
+
 
 
   /* text colors  */
@@ -120,3 +118,21 @@ html{
     animation: slideIn 1s ease-out forwards;
 }
 
+
+#heading-1, #heading-2, #content-desc{
+  transition: transform 1500ms ease-in-out;
+}
+#heading-1, #content-desc{
+  transform: translateX(-100%);
+}
+#heading-2{
+  transform: translateY(-100%);
+}
+
+.allow-animation >  #heading-1, .allow-animation > section > #content-desc {
+  transform: translateX(0px);
+}
+
+.allow-animation >section > #heading-2 {
+  transform: translateY(0px);
+}

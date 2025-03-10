@@ -12,42 +12,62 @@
 </head>
 <body class="bg-white">
         <!-- Header Section -->
-    <section id="header" class="absolute top-6  left-0 z-10 w-full " >
-        <section id="header-wrapper" class=" flex justify-between items-center gap-4 xl:gap-24 px-12 py-4 mx-24 bg-[var(--bg-header)] overflow-hidden rounded-2xl">
+    <section id="header" class="absolute top-6 left-0 z-10 w-full" >
+        <section id="header-wrapper" class=" flex justify-between items-center gap-4 xl:gap-24 px-2 lg:px-12 py-4 mx-2 lg:mx-24 bg-[var(--bg-header)] rounded-2xl">
             <section id='header-brand' class="flex gap-2 border-r  items-center">
-                <section id="brand-logo" >
+                <section id="brand-logo" class=" w-8" >
                     <img src="./assets/images/Logo.svg" alt="logo">
                 </section>
                 <section id="brand-name" class="mr-8" >
-                    <h1 class="text-white text-lg font-mulish-800">Wivali AI</h1>
+                    <h1 class="text-white text-sm font-mulish-800">Wivali AI</h1>
                 </section>
             </section>
 
-            <section id="header-navigation " class="grow flex ">
-                <ul class="hidden  md:flex justify-between items-center w-full space-x-6 text-white text-xs font-century-gothic">
-                    <li> <a href="#" class="hover:text-orange-400 ">Home</a> </li>
-                    <li> <a href="#about-us" class="hover:text-orange-400 ">About Us</a> </li>
-                    <li> <a href="#services" class="hover:text-orange-400">Services</a> </li>
-                    <li> <a href="#contact-us" class="hover:text-orange-400">Contact Us</a> </li>
-                    <li> <a href="#packages" class="hover:text-orange-400">Packages</a> </li>
-                    <li> <a href="#blog" class="hover:text-orange-400">Blog</a> </li>
+            <section id="header-bigscreen-navigation" class="hidden  md:flex md:grow px-4">
+                <ul class= "justify-between flex items-center w-full space-x-6 text-white text-xs font-century-gothic">
+                    <li> <a href="#" class="hover:bg-[var(--primary-color)] p-2 rounded-lg   transition-[background-color]">Home</a> </li>
+                    <li> <a href="#about-us" class="hover:bg-[var(--primary-color)] p-2 rounded-lg   transition-[background-color]  ">About Us</a> </li>
+                    <li> <a href="#services" class="hover:bg-[var(--primary-color)] p-2 rounded-lg   transition-[background-color] ">Services</a> </li>
+                    <li> <a href="#contact-us" class="hover:bg-[var(--primary-color)] p-2 rounded-lg   transition-[background-color] ">Contact Us</a> </li>
+                    <li> <a href="#packages" class="hover:bg-[var(--primary-color)] p-2 rounded-lg   transition-[background-color]">Packages</a> </li>
+                    <li> <a href="#blog" class="hover:bg-[var(--primary-color)] p-2 rounded-lg   transition-[background-color]">Blog</a> </li>
                 </ul>
             </section>
         
             <section id='header-socials' class="flex space-x-4 text-white">
-                <a href="#y" > <img src="./assets/./images/iconoir_youtube.svg" alt="youtube link " /> </a>
+                <a href="#" > <img src="./assets/./images/iconoir_youtube.svg" alt="youtube link " /> </a>
                 <a href="#"> <img src="./assets/images/ant-design_instagram-outlined.svg" alt="instagram link" /> </a>
                 <a href="#"> <img src="./assets/images/la_facebook.svg" alt="facebook link" /> </a>
             </section>
+            <Section id="menu-bar" class="relative md:hidden">
+                <button class="flex flex-col gap-2 px-4 hover">
+                    <section class="w-8 h-[.125rem] bg-white rounded-sm hover:bg-[var(--primary-color)] transition-[bacground-color] duration-500 "></section>
+                    <section class="w-8 h-[.125rem] bg-white rounded-sm hover:bg-[var(--primary-color)] transition-[bacground-color] duration-500 "></section>
+                    <section class="w-8 h-[.125rem] bg-white rounded-sm hover:bg-[var(--primary-color)] transition-[bacground-color] duration-500 "></section>
+                </button>
+                <section id="mobile-navbar" class="absolute h-0 mt-2 top-full right-[25%] overflow-hidden transition-[height] duration-500">
+                    <ul class= "flex flex-col justify-between items-stretch gap-2  text-white text-xs font-century-gothic bg-[var(--bg-header)] px-4 py-2 rounded">
+                        <li> <a href="#" class="hover:text-[var(--primary-color)] ">Home</a> </li>
+                        <li> <a href="#about-us" class="hover:text-[var(--primary-color)] whitespace-nowrap">About Us</a> </li>
+                        <li> <a href="#services" class="hover:text-[var(--primary-color)]">Services</a> </li>
+                        <li> <a href="#contact-us" class="hover:text-[var(--primary-color)] whitespace-nowrap">Contact Us</a> </li>
+                        <li> <a href="#packages" class="hover:text-[var(--primary-color)]">Packages</a> </li>
+                        <li> <a href="#blog" class="hover:text-[var(--primary-color)]">Blog</a> </li>
+                    </ul>
+                </section>
+            </Section>
         </section>
     </section>
 
-    <section id="hero" class="relative w-full h-screen flex flex-col justify-center items-center md:pl-52 lg:pl-72  bg-cover bg-center" style="background-image: url('./assets/images/hero.svg');">
-        <section id="hero-content" class="text-white text-left relative">
-            <h2 class="text-[12rem] font-quarts-pachino relative top-[5rem] left-[-10rem] transition-all duration-[3000] animate-slide-in">Rejuvenate</h2>
-            <p class="text-[3.5rem] mt-2 font-montserrat">Your Mind & Body</p>
+    <section id="hero" class="relative w-full h-screen flex items-end pb-12 bg-cover bg-center" style="background-image: url('./assets/images/hero.svg');">
+        <section id="hero-content" class="text-white text-left relative  sm:pl-44">
+            <section id="heading-1" class=" md:text-[12rem] font-quarts-pachino relative top-[5rem] left-[-10rem] transition-all duration-[3000]">Rejuvenate</section>
+            <section class="overflow-hidden">
+                <section id="heading-2" class="text-[3.5rem] mt-2 font-montserrat">Your Mind & Body</section>
+                <section id="content-desc" class="mt-1 text-base [font-family:var(--font-tertiary)] max-w-[425px] text-left leading-[1.7]">Experience ultimate relaxation with expert treatments in a tranquil spa, blending luxury, care, and eco-friendly wellness for rejuvenation.</section>
 
-            <p class="mt-1 text-sm font-century-gothic max-w-[22rem] text-left leading-7">Experience ultimate relaxation with expert treatments in a tranquil spa, blending luxury, care, and eco-friendly wellness for rejuvenation.</p>
+            </section>
+           
             <button href="#" class=" flex justify-between items-center inline-block bg-[var(--primary-color)] text-white px-4 py-2 mt-8 rounded-lg w-[22rem] text-lg  hover:bg-[var(--active-primary-color)] transition self-start">
                 <p>Book an Appointment </p>
                 <a href="#"><img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt=""></a>
@@ -81,8 +101,8 @@
     <section id="about-us" class="flex flex-col md:flex-row items-center justify-center px-8 py-16 gap-8">
         <section id="bar-section" class="flex items-end rounded-lg overflow-hidden">
             <section id="bars-wrapper" class="flex h-full">
-                <div class="bar py-20 w-3 bg-[var(--primary-color)] transition-[height] trasition-[padding] duration-[1000ms]"></div>
-                <div class="bar py-20 w-2 bg-[var(--bg-abt-us-bar-color)] transition-[height] trasition-[padding] duration-[1000ms]"></div>
+                <div class="bar py-20 w-3 bg-[var(--primary-color)] transition-[height] trasition-[padding] duration-[500ms]"></div>
+                <div class="bar py-20 w-2 bg-[var(--bg-abt-us-bar-color)] transition-[height] trasition-[padding] duration-[500ms]"></div>
             </section>
         <img src="./assets/images/131503497474.svg" alt="Spa Treatment" >
         </section>
@@ -166,7 +186,7 @@
     <section id="packages" class="flex flex-col items-center pt-32">
         <h2 class="text-4xl text-[var(--primary-color)] [font-family:var(--font-primary)]">Pricing Packages</h2>
         <h3 class="text-2xl [var(--tertiary-color)] text-center [font-family:var(--font-secondary)] my-4 max-w-[400px]">Tailored Spa Packages Designed to Suit Your Needs and Budget</h3>
-        <section id="cards" class="flex gap-8 mx-32 mt-16 [font-family:var(--font-tertiary)] text-xs">
+        <section id="cards" class="flex flex-col md:flex-row gap-8 mx-32 mt-16 [font-family:var(--font-tertiary)] text-xs">
             <section class="pt-20" >
                 <h4 class="[font-family:var(--font-secondary)] text-3xl">$49 <span class="[font-family:var(--font-tertiary)] text-sm text-[var(--packages-text-color)]" >/month</span></h4>
                 <h3 class="text-3xl [font-family:var(--font-secondary)] mt-6 mb-4">Basic Plan</h3>
@@ -222,12 +242,12 @@
     
     <section id="Testimonials" class="flex flex-col items-center mt-52 px-12">
         <h2 class="text-4xl text-[var(--primary-color)] [font-family:var(--font-primary)]">Testimonials</h2>
-        <h3 class="text-3xl [var(--tertiary-color)] text-center [font-family:var(--font-secondary)] my-4 min-w-[400px]">Hear What Our Happy Clients Have to Say!</h3>
+        <h3 class="text-xl md:text-3xl [var(--tertiary-color)] text-center [font-family:var(--font-secondary)] my-4 min-w-[400px] md:min-w-[400px]">Hear What Our Happy Clients Have to Say!</h3>
 
         <section id="testimonial-carousel-wrapper" class="relative  w-full h-full overflow-hidden">
             <section id="testimonial-carousel" class="relative flex items-stretch left-0 top-0 flex mt-16 ">
                 <section class="slide-wrapper absolute flex w-full justify-center">
-                    <section class="bg-[var(--bg-primary)] flex flex-col items-center px-16 pt-8 pb-12 rounded-lg w-[80vw] max-w-[1200px] mx-4">
+                    <section class="bg-[var(--bg-primary)] flex flex-col items-center px-16 pt-8 pb-12 rounded-lg w-[80vw] max-w-[1200px] mx-4 ">
                         <p class="text-[var(--primary-color)] text-9xl [font-family:var(--font-montserrat)]">&ldquo;</p>
                         <section class="text-xl text-[var(--testimonial-message-color)] [font-family:var(--font-tertiary)] mt-4">The massages are heavenly, and the sauna sessions leave me feeling refreshed every time. Best self-care investment!</section>
                         <section class="flex items-center w-full gap-6 mt-8">
@@ -246,8 +266,8 @@
                         </section>
                     </section>
                 </section>
-                <section class="slide-wrapper absolute flex justify-center w-full">
-                    <section class="bg-[var(--bg-primary)] flex flex-col items-center  px-16 pt-8 pb-12 rounded-lg w-[80vw] max-w-[1200px]">
+                <section class="slide-wrapper absolute flex justify-center w-full ">
+                    <section class="bg-[var(--bg-primary)] flex flex-col items-center  px-16 pt-8 pb-12 rounded-lg w-[80vw] max-w-[1200px] h-full">
                         <p class="text-[var(--primary-color)] text-9xl [font-family:var(--font-montserrat)]">&ldquo;</p>
                         <section class="text-xl text-[var(--testimonial-message-color)] [font-family:var(--font-tertiary)] mt-4">The premium plan is a game-changer! Unlimited spa access and VIP perks make me feel truly pampered.</section>
                         <section class="flex items-center w-full gap-6 mt-8">
@@ -272,10 +292,10 @@
         
     </section>
     
-    <section id="blog" class=" flex flex-col items-center mt-52 ">
+    <section id="blog" class=" flex flex-col items-center mt-32 md:mt-52 ">
         <h2  class="text-4xl text-[var(--primary-color)] [font-family:var(--font-primary)]">Blog</h2>
-        <h3  class="text-2xl [var(--tertiary-color)] text-center [font-family:var(--font-secondary)] my-4 max-w-[450px]">The Benefits of Regular Spa Treatments for Your Skin and Mind</h3>
-        <section id="blog-posts" class="flex justify-center gap-6 mt-20 px-10 text-[var(--blog-text-color)] [font-family:var(--font-tertiary)] font-bold">
+        <h3  class="text-xl md:text-2xl [var(--tertiary-color)] text-center [font-family:var(--font-secondary)] my-4 max-w-[350px] md:max-w-[450px]">The Benefits of Regular Spa Treatments for Your Skin and Mind</h3>
+        <section id="blog-posts" class="flex flex-col md:flex-row justify-center gap-6 mt-20 px-10 text-[var(--blog-text-color)] [font-family:var(--font-tertiary)] font-bold">
             <a id="post-one" href="#">
                 <section class="relative flex gap-4 items-center text-white" >
                     <img src="./assets/images/blog-post-image-1.png" alt="blog post image" >
@@ -345,7 +365,7 @@
     </section>
 
     <section class="flex flex-col bg-[var(--bg-primary)] mt-40 w-4/5 [font-family:var(--font-recommended-plan)] text-[.9rem] text-[var(--tertiary-color)] px-8 py-12 rounded-lg">
-        <h2 class="text-2xl  text-[var(--send-a-message-color)] [font-family:var(--font-secondary)]">Send a Message</h2>
+        <h2 class="text-xl lg:2xl  text-[var(--send-a-message-color)] [font-family:var(--font-secondary)]">Send a Message</h2>
         <p class="pt-2">Your email address will not be published. Required fields are marked *</p>
         <form class="flex flex-col mt-6 ">
             <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg mb-4">
@@ -358,33 +378,33 @@
         </form>
     </section>
 
-    <section  class="my-32 flex flex-col items-center w-4/5">
-        <h2 class="text-2xl  text-[var(--send-a-message-color)] [font-family:var(--font-secondary)] max-w-[450px] text-center">Sign up for our newsletter to get update information, insight, or news.</h2>
-        <form class="flex justify-between items-center border border-[var(--tertiary-color)] mt-12 rounded-lg p-2 md:w-3/5 max-w-[600px] [font-family:var(--font-recommended-plan)] text-base text-[var(--tertiary-color)]">
-            <input type="email" name="email" id="email" placeholder="Email" class="pl-3 outline-none focus-visible:border-0">
-            <button type="'submit"  class="self-end flex justify-between items-center  bg-[var(--primary-color)] hover:bg-[var(--active-primary-color)] text-white text-base px-4 py-1 w-52 rounded-lg    transition">
+    <section id="Subscribe"  class=" flex flex-col items-center   my-32 px-4 w-full md:w-4/5">
+        <h2 class="text-xl lg:text-2xl  text-[var(--send-a-message-color)] [font-family:var(--font-secondary)] max-w-[300px] md:max-w-[450px] text-center">Sign up for our newsletter to get update information, insight, or news.</h2>
+        <form class="flex justify-between items-center border border-[var(--tertiary-color)] mx-4 md:mx-auto mt-12 rounded-lg p-2 md:w-3/5 max-w-[600px] [font-family:var(--font-recommended-plan)] text-base text-[var(--tertiary-color)]">
+            <input type="email" name="email" id="email" placeholder="Email" class="pl-3 outline-none">
+            <button type="'submit"  class="self-end flex justify-between items-center  bg-[var(--primary-color)] hover:bg-[var(--active-primary-color)] text-white text-base px-4 py-1 md:w-52 rounded-lg ">
                 <p>Subscribe</p>
-                <a ><img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt="link"></a>
+                <a class="w-8 h-auto"><img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt="link"></a>
             </button>
         </form>
     </section>
 
     <section id="footer" class=" text-white text-[0.9rem] bg-[var(--secondary-color)] [font-family:var(--font-tertiary)] w-full pt-12 pb-8 px-16" >
-        <section class="flex justify-between ">
+        <section class="flex flex-col md:flex-row items-center md:items-start justify-between gap-16 md:gap-8   ">
             <section id='footer-brand' class="grow">
                 <section class="flex items-center gap-2">
                     <section id="brand-logo" >
                         <img src="./assets/images/Logo.svg" alt="logo">
                     </section>
                     <section id="brand-name" class="mr-8" >
-                        <h1 class="text-white text-lg font-mulish-800">Wivali AI</h1>
+                        <h1 class="text-white text-lg font-mulish-800 whitespace-nowrap">Wivali AI</h1>
                     </section>
                 </section>  
             </section>
-            <section id="footer-brand-services-and-info " class="grow flex justify-between gap-12">
-                <section id="footer-brand-services">
+            <section id="footer-brand-services-and-info " class="grow flex justify-evenly md:justify-between gap-8 md:gap-12">
+                <section id="footer-brand-services" class="whitespace-nowrap">
                     <h3 class="text-sm text-[var(--footer-heading-color)] pb-12">Services</h3>
-                    <ul>
+                    <ul class="whitespace-nowrap">
                         <li class="hover:text-[var(--primary-color)] transition-[color]">Message Therapy</li>
                         <li class="hover:text-[var(--primary-color)] transition-[color]">Facial Treatments</li>
                         <li class="hover:text-[var(--primary-color)] transition-[color]">Body Treatments</li>
@@ -393,7 +413,7 @@
                         <li class="hover:text-[var(--primary-color)] transition-[color]">Relaxation Lounge</li>
                     </ul>
                 </section>
-                <section id="footer-brand-info">
+                <section id="footer-brand-info" class="whitespace-nowrap">
                     <h3 class="text-sm text-[var(--footer-heading-color)] pb-12">Info</h3>
                     <ul>
                         <li class="hover:text-[var(--primary-color)] transition-[color]"><a href='#'>Home</a></li>
@@ -404,23 +424,29 @@
                     </ul>
                  </section>
                 <section>
-                    <button class="flex items-center justify-between bg-[var(--primary-color)] text-white max-w-52 flex-grow-0 h-auto p-1 px-4 rounded-lg hover:bg-[var(--active-primary-color)] transition-['bacground-color']">
+                    <button class="flex items-center justify-between bg-[var(--primary-color)] text-white max-w-52 flex-grow-0 h-auto p-1 px-4 rounded-lg hover:bg-[var(--active-primary-color)] transition-['bacground-color'] hidden md:flex">
                         <p>Consultation</p>
                         <a href="#"><img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt="link"></a>
                     </button>
                 </section>
             </section>
+            <section>
+                <button class="flex md:hidden items-center justify-between bg-[var(--primary-color)] text-white max-w-52 flex-grow-0 h-auto p-1 px-4 rounded-lg hover:bg-[var(--active-primary-color)] transition-['bacground-color']">
+                    <p>Consultation</p>
+                    <a href="#"><img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt="link"></a>
+                </button>
+            </section>
         </section>
-        <section class="flex flex-col lg:flex-row justify-between items-center mt-32">
+        <section class="flex flex-col lg:flex-row justify-between items-center gap-6 mt-32">
             <section id="footer-brand-socials" class="grow flex gap-4">
                 <a href="#" class="flex items-center justify-center border border-white/20 rounded-full  w-12 h-12 "> <img src="./assets/images/facebook-logo-2.svg" alt="facebook link" /> </a>
                 <a href="#" class="flex items-center justify-center border border-white/20 rounded-full w-12 h-12 "> <img src="./assets/images/ant-design_instagram-outlined.svg" alt="instagram link" > </a>
             </section>
-            <section class="grow flex justify-between lg:items-end gap-12 [font-family:var(--font-tertiary)] text-[0.9rem]">
-                <section class="text-[var]">
-                    <section class="w-16 h-[0.1rem] bg-[var(--active-primary-color)] mb-8 "></section>
-                    <p>+1 891 989-11-91</p>
-                    <p>info@logoipsum.com</p>
+            <section class="grow flex flex-col  md:flex-row items-center justify-center md:justify-between  lg:items-end md:gap-12 [font-family:var(--font-tertiary)] text-[0.9rem]">
+                <section class="">
+                    <section class="hidden md:block w-16 h-[0.1rem] bg-[var(--active-primary-color)] mb-8 "></section>
+                    <p class="text-center md:text-left">+1 891 989-11-91</p>
+                    <p class="text-center md:text-left">info@logoipsum.com</p>
                 </section>
                 <section>
                     <p class="text-[var(--footer-heading-color)]">© 2023 — Copyright</p>

@@ -11,13 +11,13 @@ const servicesCarousel = document.getElementById('services-carousel')
 const servicesTransProp= 'transform 3s ease-in-out, opacity 1000ms'
 const [modServicesCarousel, servicesCarouselClone, servicesSlidesLength,  servicestransfromXLen] = ModifyAndCloneCarousel(servicesCarousel, '#services-carousel-wrapper', servicesTransProp)
 const servicesSlideMulltiplier=[1]
-let servCarouselInterval = setInterval(()=>{
+let   servCarouselInterval = setInterval(()=>{
     handleSlide(modServicesCarousel, servicesCarouselClone, servicesSlidesLength, servicestransfromXLen, servicesSlideMulltiplier, servicesTransProp, true ) 
 } , 5000) 
 
 const slideButtons= document.getElementById('slide-buttons')
 slideButtons.addEventListener('click', (event)=>{
-    slideWithButton(event, [servCarouselInterval], modServicesCarousel, servicesCarouselClone,servicestransfromXLen, servicesSlideMulltiplier, servicesSlidesLength, servicesTransProp) 
+    slideWithButton(event, servCarouselInterval, modServicesCarousel, servicesCarouselClone,servicestransfromXLen, servicesSlideMulltiplier, servicesSlidesLength, servicesTransProp) 
 })  //slide services carousel with button click
 
 
@@ -39,6 +39,7 @@ let tsmCarouselInterval = setInterval(()=>{
 
 function ModifyAndCloneCarousel (carouselElement, cloneParent='#services-carousel-wrapper', transProp='') {
     const carouselArray = Array.from(carouselElement.children)
+    const longestHeight= carouselArray.sort((a, b) => b.offsetHeight - a.offsetHeight)[0];
     const firstChildWidth = carouselElement.children[0].offsetWidth
     const firstChildHeight = carouselElement.children[0].offsetHeight
     carouselElement.style.width = `${firstChildWidth}px`
@@ -93,7 +94,7 @@ function handleSlide(carouselElement, carouselClone, slidesLength, transformxLen
            
             //fade out the cloned carousel from the background
             carouselClone.style.opacity=0
-        }, 3000);
+        }, 1000);
 
         //reset
         multiplier[0]=1
@@ -111,11 +112,12 @@ function handleSlide(carouselElement, carouselClone, slidesLength, transformxLen
 
 
 
-function slideWithButton(event, openInterval=[], carousel, clonedCarousel, transformxLen, multiplier, slidesLength, transProp) {
+function slideWithButton(event, openInterval, carousel, clonedCarousel, transformxLen, multiplier, slidesLength, transProp) {
     const target = event.target.closest('button')
     if(target != null) {
         const index = Array.from(target.parentElement.children).indexOf(target)
-        clearInterval(openInterval[0])
+        console.log(openInterval)
+        clearInterval(servCarouselInterval)
 
         //fade out the cloned carousel incase its shown, anytime the button is clicked.
         clonedCarousel.style.opacity=0
@@ -125,11 +127,12 @@ function slideWithButton(event, openInterval=[], carousel, clonedCarousel, trans
         const previousMultiplierValue= multiplier[0]
         changeSlideBtnColor(index, previousMultiplierValue, slidesLength, 'button-selected')
         multiplier[0] = index+1
-        openInterval[0]= setInterval(()=>{
+        servCarouselInterval= setInterval(()=>{
     // handleSlide(modServicesCarousel, servicesCarouselClone, servicesSlidesLength, servicestransfromXLen, servicesSlideMulltiplier, servicesTransProp, true ) 
     //
             handleSlide(carousel, clonedCarousel, slidesLength, transformxLen, multiplier, transProp, true )
         }, 5000)
+        console.log(openInterval)
     }
 }
 
@@ -228,4 +231,55 @@ function growBar(){
     }
 
 
+}
+
+
+
+
+
+//handle hero section animation
+
+const heroSection= document.getElementById('hero')
+const heroContent= document.getElementById('hero-content')
+const bgImageUrl= heroSection.style.backgroundImage.slice(5, -2)    
+// console.log(bgImageUrl)
+
+const img = new Image()
+img.src=bgImageUrl
+
+
+
+window.onload=()=>{
+   img.complete? handleHeroSectionAnimation(): img.onload= handleHeroSectionAnimation
+}
+
+
+function handleHeroSectionAnimation(){
+    console.log('handling')
+    heroContent.classList.add('allow-animation')
+}
+
+
+//handle showing the mobile navigation menu
+const menuBar= document.getElementById('menu-bar')
+const menuBtn= menuBar.firstElementChild
+
+//add click event listener
+menuBar.onclick= handleMenuBtnClick
+
+function handleMenuBtnClick(){
+
+    const mobileNavbar= document.getElementById('mobile-navbar')
+    mobileNavbar.classList.toggle('show')
+
+    if(mobileNavbar.classList.contains('show')){
+        mobileNavbar.style.height='500px'
+    }else{
+        mobileNavbar.style.height='0'
+
+    }
+    
+    // navigation.classList.toggle('hidden')
+    console.log('u click')
+    console.log(navigation)
 }
