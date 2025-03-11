@@ -39,16 +39,19 @@ let tsmCarouselInterval = setInterval(()=>{
 
 function ModifyAndCloneCarousel (carouselElement, cloneParent='#services-carousel-wrapper', transProp='') {
     const carouselArray = Array.from(carouselElement.children)
-    const longestHeight= carouselArray.sort((a, b) => b.offsetHeight - a.offsetHeight)[0];
+    const longestElement= [...carouselArray].sort((a, b) => b.offsetHeight - a.offsetHeight)[0];
+
+    // console.log()
     const firstChildWidth = carouselElement.children[0].offsetWidth
-    const firstChildHeight = carouselElement.children[0].offsetHeight
+    // const firstChildHeight = carouselElement.children[0].offsetHeight
     carouselElement.style.width = `${firstChildWidth}px`
-    carouselElement.style.height = `${firstChildHeight}px`
+    carouselElement.style.height = `${longestElement.offsetHeight}px`
     carouselElement.style.zIndex = '20'
     carouselElement.style.transition = transProp
 
     //loop through slides and arrange them to the right
     carouselArray.forEach((child, index) => {
+        child.style.height=`${longestElement}px`
         child.style.transform = `translateX(${firstChildWidth * index}px)`
         
     })
@@ -81,23 +84,23 @@ function handleSlide(carouselElement, carouselClone, slidesLength, transformxLen
     //if last carousel item is reached, fade out and reset carousel
     if(multiplier[0] ==slidesLength) {
         //fade out carousel, fade-in cloned cloned carousel 
-        carouselClone.style.opacity=1
-        carouselElement.style.opacity=0
-        carouselClone.style.transform = `translateX(0px)`
-        hasBtnControl? changeSlideBtnColor(0, multiplier[0], slidesLength): null
+        // carouselClone.style.opacity=1
+        // carouselElement.style.opacity=0
+        // carouselClone.style.transform = `translateX(0px)`
+        // hasBtnControl? changeSlideBtnColor(0, multiplier[0], slidesLength): null
 
-        //fade-in back the carousel and translate it to the first slide after 1000ms( opacity transition)
-        setTimeout(() => {
-            carouselElement.style.opacity= 1
-            carouselElement.style.transition = 'none'
-            carouselElement.style.transform = `translateX(0px)`
+        // //fade-in back the carousel and translate it to the first slide after 1000ms( opacity transition)
+        // setTimeout(() => {
+        //     carouselElement.style.opacity= 1
+        //     carouselElement.style.transition = 'none'
+        //     carouselElement.style.transform = `translateX(0px)`
            
-            //fade out the cloned carousel from the background
-            carouselClone.style.opacity=0
-        }, 1000);
+        //     //fade out the cloned carousel from the background
+        //     carouselClone.style.opacity=0
+        // }, 1000);
 
-        //reset
-        multiplier[0]=1
+        // //reset
+        // // multiplier[0]=1
     }else{
         //slide carousel
         carouselElement.style.transition = transProp

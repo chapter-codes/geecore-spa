@@ -99,26 +99,11 @@ html{
   }
   
 
-/* border colors */
-.boder-color-highlight {
-    border-color: #9A9A9A;
-}
-  /* animations */
-  @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-.animate-slide-in {
-    animation: slideIn 1s ease-out forwards;
+#menu-bar > button:hover > *{
+  background-color: var(--primary-color);
 }
 
-
+/* hero contents */
 #heading-1, #heading-2, #content-desc{
   transition: transform 1500ms ease-in-out;
 }
