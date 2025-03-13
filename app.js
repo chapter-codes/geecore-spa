@@ -51,7 +51,7 @@ function ModifyAndCloneCarousel (carouselElement, cloneParent='#services-carouse
 
     //loop through slides and arrange them to the right
     carouselArray.forEach((child, index) => {
-        child.style.height=`${longestElement}px`
+        child.style.height=`${longestElement.offsetHeight}px`
         child.style.transform = `translateX(${firstChildWidth * index}px)`
         
     })
@@ -83,24 +83,24 @@ function ModifyAndCloneCarousel (carouselElement, cloneParent='#services-carouse
 function handleSlide(carouselElement, carouselClone, slidesLength, transformxLen, multiplier, transProp="", hasBtnControl=false){
     //if last carousel item is reached, fade out and reset carousel
     if(multiplier[0] ==slidesLength) {
-        //fade out carousel, fade-in cloned cloned carousel 
-        // carouselClone.style.opacity=1
-        // carouselElement.style.opacity=0
-        // carouselClone.style.transform = `translateX(0px)`
-        // hasBtnControl? changeSlideBtnColor(0, multiplier[0], slidesLength): null
+        // fade out carousel, fade-in cloned cloned carousel 
+        carouselClone.style.opacity=1
+        carouselElement.style.opacity=0
+        carouselClone.style.transform = `translateX(0px)`
+        hasBtnControl? changeSlideBtnColor(0, multiplier[0], slidesLength): null
 
-        // //fade-in back the carousel and translate it to the first slide after 1000ms( opacity transition)
-        // setTimeout(() => {
-        //     carouselElement.style.opacity= 1
-        //     carouselElement.style.transition = 'none'
-        //     carouselElement.style.transform = `translateX(0px)`
+        //fade-in back the carousel and translate it to the first slide after 1000ms( opacity transition)
+        setTimeout(() => {
+            carouselElement.style.opacity= 1
+            carouselElement.style.transition = 'none'
+            carouselElement.style.transform = `translateX(0px)`
            
-        //     //fade out the cloned carousel from the background
-        //     carouselClone.style.opacity=0
-        // }, 1000);
+            //fade out the cloned carousel from the background
+            carouselClone.style.opacity=0
+        }, 1000);
 
-        // //reset
-        // // multiplier[0]=1
+        //reset
+        multiplier[0]=1
     }else{
         //slide carousel
         carouselElement.style.transition = transProp
@@ -204,47 +204,13 @@ function changeSlideBtnColor(index=0, multiplier, slidesLength, slideControlMeth
 
 
 
-const aboutUsBar = document.getElementById('bar-section')
-const bars= document.querySelectorAll('.bar')
-const barsSectionImage= document.querySelector('#bar-section').lastElementChild
-const barsSectionImageHeight= barsSectionImage.offsetHeight
-console.log(barsSectionImage, barsSectionImageHeight)
-window.onscroll= handleScroll
-
-function handleScroll(){
-    growBar()
-}
-
-function growBar(){
-    const rect= aboutUsBar.getBoundingClientRect()
-    const {top, bottom}= rect
-                        
-    if(top>0 && rect.bottom <= window.innerHeight){
-       //start animations   
-
-       bars.forEach(bar=>{
-        bar.style.padding=0;
-        bar.style.height= barsSectionImage.offsetHeight/2 +'px'
-       })
-    }else{
-        bars.forEach(bar=>{
-            bar.style.padding=0;
-            bar.style.height= barsSectionImage.offsetHeight/3 +'px'
-           })
-    }
-
-
-}
-
-
-
 
 
 //handle hero section animation
 
-const heroSection= document.getElementById('hero')
-const heroContent= document.getElementById('hero-content')
-const bgImageUrl= heroSection.style.backgroundImage.slice(5, -2)    
+const heroBgImage= document.getElementById('bg-image')
+const body= document.body
+const bgImageUrl= heroBgImage.style.backgroundImage.slice(5, -2)    
 // console.log(bgImageUrl)
 
 const img = new Image()
@@ -259,7 +225,7 @@ window.onload=()=>{
 
 function handleHeroSectionAnimation(){
     console.log('handling')
-    heroContent.classList.add('allow-animation')
+    body.classList.add('allow-animation')
 }
 
 
@@ -271,7 +237,6 @@ const menuBtn= menuBar.firstElementChild
 menuBar.onclick= handleMenuBtnClick
 
 function handleMenuBtnClick(){
-
     const mobileNavbar= document.getElementById('mobile-navbar')
     mobileNavbar.classList.toggle('show')
 
@@ -279,10 +244,82 @@ function handleMenuBtnClick(){
         mobileNavbar.style.height='500px'
     }else{
         mobileNavbar.style.height='0'
-
     }
     
     // navigation.classList.toggle('hidden')
     console.log('u click')
     console.log(navigation)
+}
+
+
+
+const aboutUsBar = document.getElementById('bar-section')
+const bars= document.querySelectorAll('.bar')
+const animatedText = document.getElementById('animated-text')
+//
+const barsSectionImage= document.querySelector('#bar-section').lastElementChild
+const barsSectionImageHeight= barsSectionImage.offsetHeight
+const prevTextHeight = animatedText.offsetHeight
+
+//animate the about-us bar and  section on on scroll
+window.onscroll= handleScroll
+
+function handleScroll(){
+    const barRect= aboutUsBar.getBoundingClientRect()
+    const animatedTextRect= animatedText.getBoundingClientRecct()
+
+    if((barRect.top>0 && barRect.bottom <= window.innerHeight) && (animatedTextRect.top>0 && animatedTextRect.bottom <= window.innerHeight)){
+        growBars()
+        growText()
+    
+    }else if((barRect.top>0 && barRect.bottom <= window.innerHeight) && !(animatedTextRect.top>0 && animatedTextRect.bottom <= window.innerHeight)){
+        growBars()
+        ungrowText()
+    }else if( !(barRect.top>0 && barRect.bottom <= window.innerHeight) && (animatedTextRect.top>0 && animatedTextRect.bottom <= window.innerHeight) ){
+        growText()
+        reduceBars()
+    }
+    else{
+      reduceBars()
+      ungrowText()
+    }
+}
+
+function growBars(){
+       bars.forEach(bar=>{
+        bar.style.padding=0;
+        bar.style.height= barsSectionImage.offsetHeight/2 +'px'
+       })
+    }
+function reduceBars (){
+    bars.forEach(bar=>{
+        bar.style.padding=0;
+        bar.style.height= barsSectionImage.offsetHeight/3 +'px'
+       })
+}
+    
+function growText(){
+    console.log(animatedText.parentElement)
+    // animatedText.style.height= animatedText.parentElement.offsetHeight +'px'
+    animatedText.style.maxHeight= '500px'
+
+}
+
+function ungrowText(){
+    animatedText.style.maxHeight= prevTextHeight +'px';
+    
+}
+
+
+//animate the about-us section on mouseenter
+const aboutUs = document.getElementById('about-us')
+console.log(aboutUs)
+aboutUs.onmouseenter= ()=>{
+    growText()
+    growBars()
+}
+
+aboutUs.onmouseleave = ()=>{
+    ungrowText()
+    reduceBars()
 }

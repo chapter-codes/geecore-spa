@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'century-gothic';
-  src: url('./assets/fonts/CenturyGothic.ttf')format('truetype');
+  src: url('./assets/fonts/CenturyGothic.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -49,7 +49,7 @@
 
   /* fonts */
   --font-primary: 'Quarts-pachino', sans-serif;
-  --font-secondary: 'Luxia-Display', sans-serif;
+  --font-secondary: 'Luxia-Display';
   --font-tertiary: 'Century Gothic', sans-serif;
   --font-mulish: 'Mulish', serif;
   --font-montserrat: 'Montserrat', serif;
@@ -104,8 +104,11 @@ html{
 }
 
 /* hero contents */
-#heading-1, #heading-2, #content-desc{
-  transition: transform 1500ms ease-in-out;
+#header, #heading-1, #heading-2, #content-desc, #hero-content button {
+  transition: transform 2000ms ease-in-out;
+}
+#header{
+  transform:translateY(-200%)
 }
 #heading-1, #content-desc{
   transform: translateX(-100%);
@@ -113,11 +116,19 @@ html{
 #heading-2{
   transform: translateY(-100%);
 }
+#hero-content button{
+  transform: translateY(200%);
+}
 
-.allow-animation >  #heading-1, .allow-animation > section > #content-desc {
+/* when hero background image is loaded */
+.allow-animation #bg-image{
+  opacity:1
+}
+.allow-animation #header, .allow-animation #heading-2, .allow-animation #hero-content button{
+  transform: translateY(0px);
+}
+
+.allow-animation   #heading-1, .allow-animation  #content-desc {
   transform: translateX(0px);
 }
 
-.allow-animation >section > #heading-2 {
-  transform: translateY(0px);
-}
