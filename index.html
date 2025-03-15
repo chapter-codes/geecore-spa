@@ -98,17 +98,17 @@
     </section>
     
     <section id="about-us" class="flex flex-col md:flex-row items-center justify-center px-8 py-16 gap-8">
-        <section id="bar-section" class="flex items-end rounded-lg overflow-hidden">
+        <section id="bar-section" class="flex items-end rounded-lg overflow-hidden lg:min-w-[400px]">
             <section id="bars-wrapper" class="flex h-full">
                 <div class="bar h-14 w-3 bg-[var(--primary-color)] transition-[height] trasition-[padding] duration-1000"></div>
                 <div class="bar h-14 w-2 bg-[var(--bg-abt-us-bar-color)] transition-[height] trasition-[padding] duration-1000"></div>
             </section>
-        <img src="./assets/images/131503497474.svg" alt="Spa Treatment" >
+        <img src="./assets/images/about-us.svg" alt="Spa Treatment" class="">
         </section>
-        <section class=" max-w-[600px]">
+        <section class=" md:max-w-[400px]  lg:max-w-[600px]">
             <h2 class="text-[var(--primary-color)] text-4xl text-color-section font-quarts-pachino">About Us</h2>
             <section class="min-h-[130px]">
-                <h3 id="animated-text" class="text-3xl font-luxia-display mt-2 max-h-10  overflow-hidden  transition-[max-height] duration-[1000ms] transition-[timing-function:ease-in-out]">A serene haven offering expert spa treatments, relaxation, and rejuvenation for ultimate well-being.</h3>
+                <h3 id="animated-text" class="text-3xl font-luxia-display mt-2 max-h-10  overflow-hidden  transition-[max-height] duration-[1000ms] transition-[timing-function:ease-in]">A serene haven offering expert spa treatments, relaxation, and rejuvenation for ultimate well-being.</h3>
             </section>
             <p  class="text-[var(--tertiary-color)] text-base font-century-gothic my-10">Luxury Beauty Spa is committed to delivering exceptional spa treatments designed for relaxation and rejuvenation. With our skilled therapists, eco-friendly products, and tranquil environment, we create the perfect escape from daily stress.</p>
             <button class=" flex justify-between items-center bg-[var(--primary-color)] text-white px-6 py-1 rounded-lg shadow-md hover:bg-[var(--active-primary-color)] transition">
@@ -119,12 +119,66 @@
     </section>
 
   
-    <section id="services" class="bg-[var(--bg-primary)] pt-16 pb-24 px-8 text-center flex flex-col items-center">
+    <section id="services" class="bg-[var(--bg-primary)] pt-16 pb-24 px-8 md:px-20 lg:px-40 text-center flex flex-col items-center">
         <h2 class="text-4xl text-[var(--primary-color)] text-[var(--active-primary-color)] [font-family:var(--font-primary)] ">Services</h2>
         <h3 class="text-2xl [var(--tertiary-color)] [font-family:var(--font-secondary)] my-4 max-w-[600px]">A serene haven offering expert spa treatments, relaxation, and rejuvenation for ultimate well-being.</h3>
-        <section id="services-carousel-wrapper" class="overflow-hidden relative w-full">
-            <section id="services-carousel" class="relative  gap-4 [font-family:var(--font-secondary)] text-[var(--secondary-color)] mt-6 px-12">
-                <section id="slide-1" class=" absolute w-full left-0 top-0 flex gap-8 px-8 lg:px-20  mx-auto">
+
+        <!-- mobile services carousel -->
+         <section id="mobile-services-carousel-wrapper" class="md:hidden overflow-hidden mt-8">
+            <section id="mobile-services-carousel" class="relative w-full min-h-32 min-w-72">
+                    <section class="absolute left-0 top-0 flex flex-col items-center rounded-lg px-2">
+                        <img src="./assets/images/messagetherapy.png" alt="Massage Therapy" class="w-full rounded-lg">
+                        <h4 class="text-lg  mt-4 ">Massage Therapy</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)]">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                    <section class="absolute left-0 top-0 flex flex-col items-center rounded-lg px-2">
+                        <img src="./assets/images/facial-treatments.png" alt="Facial Treatments" class="w-full rounded-lg">
+                        <h4 class="text-lg  mt-4">Facial Treatments</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)] ">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                    <section class="absolute left-0 top-0 flex flex-col items-center rounded-lg px-2">
+                        <img src="./assets/images/cute-mother-daughter-home-pajamas@2x.png" alt="Nail Care" class="w-full rounded-lg">
+                        <h4 class="text-lg mt-4">Nail Care</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)] ">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                    <section class="absolute left-0 top-0 flex flex-col items-center rounded-lg px-2">
+                        <img src="./assets/images/massagetherapy2.png" alt="Massage Therapy" class="w-full rounded-lg">
+                        <h4 class="text-lg  mt-4 ">Massage Therapy</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)] m">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                    <section class="absolute left-0 top-0 flex flex-col items-center rounded-lg px-2">
+                        <img src="./assets/images/facial-treatment2.png" alt="Facial Treatments" class="w-full rounded-lg">
+                        <h4 class="text-lg  mt-4">Facial Treatments</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)] ">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                    <section class="absolute left-0 top-0 flex flex-col items-center rounded-lg px-2">
+                        <img src="./assets/images/nailcare2.png" alt="Nail Care" class="w-full rounded-lg">
+                        <h4 class="text-lg mt-4">Nail Care</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)]">Stone massage are the best most popular spa treatment.</p>
+                    </section>                    <section class="absolute left-0 top-0 flex flex-col items-center rounded-lg px-2">
+                        <img src="./assets/images/massagetherapy3.png" alt="Massage Therapy" class="w-full rounded-lg">
+                        <h4 class="text-lg  mt-4 ">Massage Therapy</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)]">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                    <section class="absolute left-0 top-0 flex flex-col items-center rounded-lg px-2">
+                        <img src="./assets/images/facial-treatment3.png" alt="Facial Treatments" class="w-full rounded-lg">
+                        <h4 class="text-lg  mt-4">Facial Treatments</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)]">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+                    <section class="absolute left-0 top-0 flex flex-col items-center rounded-lg px-2">
+                        <img src="./assets/images/nailcare3.png" alt="Nail Care" class="w-full rounded-lg">
+                        <h4 class="text-lg mt-4">Nail Care</h4>
+                        <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)]">Stone massage are the best most popular spa treatment.</p>
+                    </section>
+            </section>
+            <section id="mobile-slide-buttons" class="flex gap-4">
+                <button>prev nex</button>
+                <button></button>
+            </section>
+         </section>
+        <section id="services-carousel-wrapper" class="hidden md:block md:overflow-hidden relative w-full">
+            <section id="services-carousel" class="relative  gap-4 [font-family:var(--font-secondary)] text-[var(--secondary-color)] mt-6 ">
+                <section id="slide-1" class=" absolute w-full left-0 top-0 flex gap-8 px-4">
                     <section class="flex flex-col items-center rounded-lg ">
                         <img src="./assets/images/messagetherapy.png" alt="Massage Therapy" class="w-full rounded-lg">
                         <h4 class="text-lg  mt-4 ">Massage Therapy</h4>
@@ -141,7 +195,7 @@
                         <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)] ">Stone massage are the best most popular spa treatment.</p>
                     </section>
                 </section>
-                <section id="slide-2" class=" absolute w-full left-0 top-0 flex gap-8 px-8  lg:px-20 mx-auto">
+                <section id="slide-2" class=" absolute w-full left-0 top-0 flex gap-8 px-4">
                     <section class="flex flex-col items-center rounded-lg ">
                         <img src="./assets/images/massagetherapy2.png" alt="Massage Therapy" class="w-full rounded-lg">
                         <h4 class="text-lg  mt-4 ">Massage Therapy</h4>
@@ -158,7 +212,7 @@
                         <p class="text-[var(--tertiary-color)] [font-family:var(--font-tertiary)]">Stone massage are the best most popular spa treatment.</p>
                     </section>
                 </section>
-                <section id="slide-3" class="absolute w-full top-0 left-0 flex gap-8 px-8 lg:px-20 mx-auto">
+                <section id="slide-3" class="absolute w-full top-0 left-0 flex gap-8 px-4">
                     <section class="flex flex-col items-center rounded-lg ">
                         <img src="./assets/images/massagetherapy3.png" alt="Massage Therapy" class="w-full rounded-lg">
                         <h4 class="text-lg  mt-4 ">Massage Therapy</h4>
@@ -177,10 +231,10 @@
                 </section>
             </section>
         </section>  
-        <section id="slide-buttons" class=" flex justify-center items-center gap-4 w-full mt-10">
-            <button class=""> <section class="w-14 h-1 rounded-lg bg-[var(--primary-color)] transition-[background-color] duration-[1000ms]"></section></button>
-            <button class=""> <section class="w-14 h-1 rounded-lg bg-[var(--slide-control-button-color)] transition-[background-color] duration-[1000ms]"></section></button>
-            <button class=""> <section class="w-14 h-1 rounded-lg bg-[var(--slide-control-button-color)] transition-[background-color] duration-[1000ms]"></section></button>
+        <section id="slide-buttons" class="hidden md:block flex justify-center items-center gap-4 w-full mt-10">
+            <button class="h-6"> <section class="w-14 h-1 rounded-lg bg-[var(--primary-color)] transition-[background-color] duration-[1000ms]"></section></button>
+            <button class="h-6"> <section class="w-14 h-1 rounded-lg bg-[var(--slide-control-button-color)] transition-[background-color] duration-[1000ms]"></section></button>
+            <button class="h-6"> <section class="w-14 h-1 rounded-lg bg-[var(--slide-control-button-color)] transition-[background-color] duration-[1000ms]"></section></button>
         </section> 
     </section>
     
@@ -241,14 +295,14 @@
         </section>
     </section>
     
-    <section id="Testimonials" class="flex flex-col items-center mt-52 px-6 md:px-16 lg:px-12">
+    <section id="Testimonials" class="flex flex-col items-center mt-52 px-6 md:px-16 lg:px-32">
         <h2 class="text-4xl text-[var(--primary-color)] [font-family:var(--font-primary)]">Testimonials</h2>
         <h3 class="text-xl md:text-3xl [var(--tertiary-color)] text-center [font-family:var(--font-secondary)] px-8 md:px-auto my-4 max-w-[350px] md:min-w-[400px]">Hear What Our Happy Clients Have to Say!</h3>
 
-        <section id="testimonial-carousel-wrapper" class="relative  w-full h-full overflow-hidden">
-            <section id="testimonial-carousel" class="relative flex items-stretch left-0 top-0 flex mt-16 ">
+        <section id="testimonial-carousel-wrapper" class="relative  w-full h-full overflow-hidden ">
+            <section id="testimonial-carousel" class="relative flex items-stretch left-0 top-0 flex mt-16 transition-[timing-function:cubic-bezier(0, 1.32, 0.27, 1.19)]">
                 <section class="slide-wrapper absolute flex w-full justify-center">
-                    <section class="bg-[var(--bg-primary)] flex flex-col items-center px-8 lg:px-16 pt-8 pb-12 rounded-lg w-[80vw] max-w-[1200px] mx-4 h-full">
+                    <section class="bg-[var(--bg-primary)] flex flex-col items-center px-8 lg:px-16 pt-8 pb-12 rounded-lg w-[80vw] max-w-[1200px] mx-2 lg:mx-4 h-full">
                         <p class="text-[var(--primary-color)] text-9xl [font-family:var(--font-secondary)]">"</p>
                         <section class="grow flex flex-col justify-between gap-2text-base lg:text-xl font-medium lg:font-normal lg:text-xl text-[var(--testimonial-message-color)] [font-family:var(--font-tertiary)] mt-4">The massages are heavenly, and the sauna sessions leave me feeling refreshed every time. Best self-care investment!</section>
                         <section class="grow flex items-center w-full gap-6 mt-8">
@@ -258,7 +312,7 @@
                     </section>
                 </section>
                 <section class="slide-wrapper absolute flex justify-center w-full ">
-                    <section class="bg-[var(--bg-primary)] flex flex-col px-8 lg:px-16 pt-8 pb-12 rounded-lg w-[80vw] max-w-[1200px] mx-4 h-full">
+                    <section class="bg-[var(--bg-primary)] flex flex-col px-8 lg:px-16 pt-8 pb-12 rounded-lg w-[80vw] max-w-[1200px] mx-2 lg:mx-4 h-full">
                         <p class="self-center text-[var(--primary-color)] text-9xl [font-family:var(--font-secondary)]">"</p>
                         <section class="grow flex flex-col justify-between gap-2 text-base lg:text-xl text-[var(--testimonial-message-color)] [font-family:var(--font-tertiary)] mt-4">I love the aromatherapy massages and the serene ambiance. The staff is incredibly professional and welcoming.</section>
                         <section class="flex items-center w-full gap-6 mt-8">
@@ -268,7 +322,7 @@
                     </section>
                 </section>
                 <section class="slide-wrapper absolute flex justify-center w-full ">
-                    <section class="bg-[var(--bg-primary)] flex flex-col px-8 lg:px-16 pt-8 pb-12 rounded-lg w-[80vw] max-w-[1200px] mx-4 h-full">
+                    <section class="bg-[var(--bg-primary)] flex flex-col px-8 lg:px-16 pt-8 pb-12 rounded-lg w-[80vw] max-w-[1200px] mx-2 lg:mx-4 h-full">
                         <p class="self-center text-[var(--primary-color)] text-9xl [font-family:var(--font-secondary)]">"</p>
                         <section class="grow flex flex-col justify-between gap-2self-start text-base lg:text-xl text-[var(--testimonial-message-color)] [font-family:var(--font-tertiary)] mt-4">The premium plan is a game-changer! Unlimited spa access and VIP perks make me feel truly pampered.</section>
                         <section class="flex items-center w-full gap-6 mt-8">
@@ -278,7 +332,7 @@
                     </section>
                 </section>
                 <section class="slide-wrapper absolute flex justify-center w-full">
-                    <section class="grow bg-[var(--bg-primary)] flex flex-col px-8 lg:px-16 pt-8 pb-12 rounded-lg w-[80vw] max-w-[1200px] mx-auto h-full"> 
+                    <section class="bg-[var(--bg-primary)] flex flex-col px-8 lg:px-16 pt-8 pb-12 rounded-lg w-[80vw] max-w-[1200px] mx-2 lg:mx-4 h-full"> 
                         <p class="self-center text-[var(--primary-color)] text-9xl [font-family:var(--font-secondary)]">"</p>
                         <section class="grow flex flex-col justify-between gap-2 text-base lg:text-xl text-[var(--testimonial-message-color)] [font-family:var(--font-tertiary)] mt-4">The facials and body scrubs are top-notch. My skin has never felt better. Highly recommend!<section>
                         <section class=" flex items-center w-full gap-6 mt-8">
