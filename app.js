@@ -1,12 +1,14 @@
 'use strict'
 
-//get the css variable value for primary and slide-control color
+
+
+//get the css variable value for primary-color and services slide-control-button color
 const root = document.documentElement;
 const primaryColor = getComputedStyle(root).getPropertyValue('--primary-color').trim();
 const slideBtnColor = getComputedStyle(root).getPropertyValue('--slide-control-button-color').trim();
 
 
-//slide services carousel desktop
+//slide services carousel: desktop(sm, md, lg, etc)
 const servicesCarousel = document.getElementById('services-carousel')
 const servicesTransProp= 'transform 3s ease-in-out, opacity 2000ms'
 const [modServicesCarousel, servicesCarouselClone, servicesSlidesLength,  servicestransfromXLen] = ModifyAndCloneCarousel(servicesCarousel, '#services-carousel-wrapper', servicesTransProp)
@@ -15,26 +17,30 @@ let   servCarouselInterval = setInterval(()=>{
     handleSlide(modServicesCarousel, servicesCarouselClone, servicesSlidesLength, servicestransfromXLen, servicesSlideMulltiplier, servicesTransProp, true ) 
 } ,7000) 
 
+ //slide services carousel with button click :desktop
 const slideButtons= document.getElementById('slide-buttons')
 slideButtons.addEventListener('click', (event)=>{
     slideWithButton(event, servCarouselInterval, modServicesCarousel, servicesCarouselClone,servicestransfromXLen, servicesSlideMulltiplier, servicesSlidesLength, servicesTransProp) 
-})  //slide services carousel with button click
+}) 
 
-//mobile services carousel
-
-console.log(getComputedStyle(servicesCarousel.parentElement).display)
-if (getComputedStyle(servicesCarousel.parentElement).display=='none'){
+//slide services carousel: mobile (< sm)
+let btnsAreDisabled= false;
+const [prevBtn, nextBtn]= Array.from(document.getElementById('mobile-slide-buttons').children).map(btn=>btn)
+console.log('btns', prevBtn, nextBtn)
+if (getComputedStyle(servicesCarousel.parentElement).display=='none'){ //desktop-services carousel is hidden
     const servicesCarousel = document.getElementById('mobile-services-carousel')
     const servicesTransProp= 'transform 3s ease-in-out, opacity 2000ms'
     const [modServicesCarousel, servicesCarouselClone, servicesSlidesLength,  servicestransfromXLen] = ModifyAndCloneCarousel(servicesCarousel, '#mobile-services-carousel-wrapper', servicesTransProp)
     const servicesSlideMulltiplier=[1]
-    let   servCarouselInterval = setInterval(()=>{
-        handleSlide(modServicesCarousel, servicesCarouselClone, servicesSlidesLength, servicestransfromXLen, servicesSlideMulltiplier, servicesTransProp, false  ) 
+    servCarouselInterval = setInterval(()=>{
+        handleSlide(modServicesCarousel, servicesCarouselClone, servicesSlidesLength, servicestransfromXLen, servicesSlideMulltiplier, servicesTransProp, false) 
     } ,7000) 
     
     const slideButtons= document.getElementById('mobile-slide-buttons')
     slideButtons.addEventListener('click', (event)=>{
         slideWithButton(event, servCarouselInterval, modServicesCarousel, servicesCarouselClone,servicestransfromXLen, servicesSlideMulltiplier, servicesSlidesLength, servicesTransProp) 
+   
+        
     })  //slide services carousel with button click
     
 
@@ -54,31 +60,29 @@ let tsmCarouselInterval = setInterval(()=>{
 
 
 
-
-
 function ModifyAndCloneCarousel (carouselElement, cloneParent='#services-carousel-wrapper', transProp='') {
     const firstChildWidth = carouselElement.children[0].offsetWidth
     const carouselArray = Array.from(carouselElement.children)
-    const longestElement= [...carouselArray].sort((a, b) => b.offsetHeight - a.offsetHeight)[0];
 
+    function LongestHeight(){
+        const carouselArray= Array.from(document.getElementById(carouselElement.id).children)
+        const longestElement= [...carouselArray].sort((a, b) => b.offsetHeight - a.offsetHeight)[0];
+        return longestElement.offsetHeight
+    }
 
+    //set services carousel height when image has fully loaded
     if(carouselElement.id.includes('services')){
         const imgUrl = document.getElementById('services-carousel').firstElementChild.firstElementChild.firstElementChild.src
         const img = new Image()
         img.src= imgUrl
-        
+       
         carouselElement.style.height =  
             img.complete  
-            ? `${longestElement.offsetHeight}px`  
-            : (img.onload = () => {
-                const longestElement= [...carouselArray].sort((a, b) => b.offsetHeight - a.offsetHeight)[0];
-                carouselElement.style.height = `${longestElement.offsetHeight}px`;
-            });
-    
-        
+            ? `${LongestHeight()}px`
+            : (img.onload = () => carouselElement.style.height = `${LongestHeight()}px`);
+        console.log(LongestHeight())
     }else{
-
-        carouselElement.style.height = `${longestElement.offsetHeight}px`
+        carouselElement.style.height = `${LongestHeight()}px`
     }
     carouselElement.style.width = `${firstChildWidth}px`
     carouselElement.style.zIndex = '20'
@@ -86,7 +90,7 @@ function ModifyAndCloneCarousel (carouselElement, cloneParent='#services-carouse
 
     //loop through slides and arrange them to the right
     carouselArray.forEach((child, index) => {
-        child.style.height=`${longestElement.offsetHeight}px`
+        child.style.height=`${LongestHeight()}px`
         child.style.transform = `translateX(${firstChildWidth * index}px)`
         
     })
@@ -114,14 +118,20 @@ function ModifyAndCloneCarousel (carouselElement, cloneParent='#services-carouse
 
 
 
-
 function handleSlide(carouselElement, carouselClone, slidesLength, transformxLen, multiplier, transProp="", hasBtnControl=false){
     //if last carousel item is reached, fade out and reset carousel
     if(multiplier[0] ==slidesLength) {
+        if(carouselElement.id.includes('mobile')){
+           setTimeout(()=>{
+                nextBtn.disabled=false
+                nextBtn.style.opacity=1
+                prevBtn.disabled=true
+                prevBtn.style.opacity=0.6
+           }, 1000)
+        }else{}
         // fade out carousel, fade-in cloned cloned carousel 
         carouselClone.style.opacity=1
         carouselElement.style.opacity=0
-        carouselClone.style.transform = `translateX(0px)`
         hasBtnControl? changeSlideBtnColor(0, multiplier[0], slidesLength): null
 
         //fade-in back the carousel and translate it to the first slide after 1000ms( opacity transition)
@@ -132,16 +142,25 @@ function handleSlide(carouselElement, carouselClone, slidesLength, transformxLen
            
             //fade out the cloned carousel from the background
             carouselClone.style.opacity=0
-        }, 1000);
+        }, 2000);
 
         //reset
         multiplier[0]=1
     }else{
         //slide carousel
+        if(carouselElement.id.includes('mobile') && multiplier[0]==1){
+            prevBtn.disabled=false
+            prevBtn.style.opacity=1
+        }else if (carouselElement.id.includes('mobile') && multiplier[0]== slidesLength-1 ){
+            nextBtn.disabled=true
+            nextBtn.style.opacity=0.6
+        }else{}
+
+        
+
         carouselElement.style.transition = transProp
         carouselElement.style.transform = `translateX(-${transformxLen * multiplier}px)`
         hasBtnControl? changeSlideBtnColor(0, multiplier, slidesLength) : null
-
         multiplier[0]= multiplier[0] +1
     }   
 }
@@ -153,24 +172,59 @@ function handleSlide(carouselElement, carouselClone, slidesLength, transformxLen
 function slideWithButton(event, openInterval, carousel, clonedCarousel, transformxLen, multiplier, slidesLength, transProp) {
     const target = event.target.closest('button')
     if(target != null) {
-        const index = Array.from(target.parentElement.children).indexOf(target)
-        console.log(openInterval)
         clearInterval(servCarouselInterval)
+        const index = Array.from(target.parentElement.children).indexOf(target)
+        const previousMultiplierValue= multiplier[0]
 
         //fade out the cloned carousel incase its shown, anytime the button is clicked.
         clonedCarousel.style.opacity=0
         carousel.style.transition = transProp
-        carousel.style.transform = `translateX(-${transformxLen * index}px)`
 
-        const previousMultiplierValue= multiplier[0]
-        changeSlideBtnColor(index, previousMultiplierValue, slidesLength, 'button-selected')
-        multiplier[0] = index+1
-        servCarouselInterval= setInterval(()=>{
-    // handleSlide(modServicesCarousel, servicesCarouselClone, servicesSlidesLength, servicestransfromXLen, servicesSlideMulltiplier, servicesTransProp, true ) 
-    //
-            handleSlide(carousel, clonedCarousel, slidesLength, transformxLen, multiplier, transProp, true )
-        }, 7000)
-        console.log(openInterval)
+        if(!target.id.includes('mobile-slide-button')){
+            carousel.style.transform = `translateX(-${transformxLen * index}px)`
+            changeSlideBtnColor(index, previousMultiplierValue, slidesLength, 'button-selected')
+
+            multiplier[0] = index+1
+            servCarouselInterval= setInterval(()=>{
+                handleSlide(carousel, clonedCarousel, slidesLength, transformxLen, multiplier, transProp, tsmCarousel)
+                }, 7000)
+        }else if(target.id.includes('mobile-slide-button')){
+            const btnsArray= Array.from(document.getElementById('mobile-slide-buttons').children)
+
+            if(target.id=='mobile-slide-button-prev'){
+                if(multiplier[0] > 1 ){
+                   
+                    carousel.style.transform =  `translateX(-${transformxLen * (multiplier[0]-2)}px)`
+                    multiplier[0]=previousMultiplierValue-1
+                }
+
+            }else if(target.id=='mobile-slide-button-next'){
+                if(multiplier[0] < slidesLength ){
+                   
+                    carousel.style.transform = `translateX(-${transformxLen * multiplier[0]+1}px)`
+                    multiplier[0]=previousMultiplierValue +1
+                }
+
+            }else{
+              
+            }
+            //
+            servCarouselInterval= setInterval(()=>{
+                handleSlide(carousel, clonedCarousel, slidesLength, transformxLen, multiplier, transProp, false)
+                }, 7000)
+
+            multiplier[0]==1? (target.disabled=true, target.style.opacity=0.6)
+            : multiplier[0]>1 && multiplier <slidesLength ? btnsArray.forEach(btn=>{
+                btn.style.opacity=1
+                btn.disabled=false
+            })
+            :multiplier[0]==slidesLength? (target.disabled=true, target.style.opacity=0.6) : (target.disabled=false, target.style.opacity=1)
+
+        }else{
+
+        }
+       
+      
     }
 }
 
@@ -178,6 +232,7 @@ function slideWithButton(event, openInterval, carousel, clonedCarousel, transfor
 function changeSlideBtnColor(index=0, multiplier, slidesLength, slideControlMethod=''){
 
     if(slideControlMethod=='button-selected'){
+        console.log(multiplier, index)
         slideButtons.children[multiplier-1].firstElementChild.style.backgroundColor = slideBtnColor
             slideButtons.children[index].firstElementChild.style.backgroundColor = primaryColor
     }else{
@@ -310,3 +365,4 @@ aboutUs.onmouseleave = ()=>{
     ungrowText()
     reduceBars()
 }
+
