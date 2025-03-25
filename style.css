@@ -111,10 +111,10 @@ html{
   transform:translateY(-200%)
 }
 #heading-1, #content-desc{
-  transform: translateX(-100%);
+  transform: translateX(-150%);
 }
 #heading-2{
-  transform: translateY(-100%);
+  transform: translateY(-220%);
 }
 #hero-content button{
   transform: translateY(200%);

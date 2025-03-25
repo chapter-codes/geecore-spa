@@ -12,6 +12,7 @@ const prevTextHeight = animatedText.offsetHeight
 
 if(window.innerWidth < 1024) window.onscroll=handleScroll;
 if(window.innerWidth > 1024) handleMouseAction() ;
+if(window.innerWidth > 1024) window.onscroll=handleScroll
 
 
 //animate the about-us section on mouseenter and mouseleave: for desktop scrren
@@ -49,6 +50,18 @@ function handleScroll(){
     else{
         ungrowText()
       reduceBars()
+    }
+}
+function handleDesktopScroll(){
+    const aboutUs = document.getElementById('about-us')
+    aboutUs.onmouseenter= ()=>{
+        growText()
+        growBars()
+    }
+
+    aboutUs.onmouseleave = ()=>{
+        ungrowText()
+        reduceBars()
     }
 }
 
