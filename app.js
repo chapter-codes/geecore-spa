@@ -258,8 +258,8 @@ function changeSlideBtnColor(index=0, multiplier, slidesLength, slideControlMeth
 
 
 
-
-
-
+    const time =document.querySelector("input[type='time']")
+    time.value='12:00'
+    console.log(time, time.value)
 
 

@@ -63,18 +63,18 @@
         </div>
     </section>
 
-    <section id="hero" class="relative w-full h-[85svh] md:h-[100svh] flex items-end md:items-center  pb-12 bg-cover bg-center" style="background-image:url('./assets/images/initial-bg.svg')">
-        <div id="bg-image" style="background-image: url('./assets/images/hero.svg')"  class="absolute inset-0 bg-cover bg-center transition-[opacity] duration-[1500ms] opacity-0"></div>
+    <section id="hero" class="relative w-full h-[85svh] md:h-[100svh] flex items-end md:items-center  pb-12 bg-cover bg-center" style="background-image:url('./assets/images/initial-bg.png')">
+        <div id="bg-image" style="background-image: url('./assets/images/hero.png')"  class="absolute inset-0 bg-cover bg-center transition-[opacity] duration-[1500ms] opacity-0"></div>
         <div id="hero-content" class="relative text-white text-left relative pl-16  md:mt-6 md:pl-52 lg:pl-72 overflow-hidden ">
             <div id="heading-1" class="text-6xl md:text-[14rem] font-quarts-pachino relative left-[-3rem] top-[1.5rem] md:top-[3.5rem] md:left-[-11rem] ">Rejuvenate</div>
             <div class="overflow-hidden max-w-[250px] md:max-w-full ml-[.25rem] md:ml-6">
                 <div id="heading-2" class="text-2xl md:text-[3.5rem] md:text- mt-4 [font-family:var(---)]">Your Mind & Body</div>
                 <div id="content-desc" class="mt-6 md:mt-8 text-sm md:text-base [font-family:var(--font-tertiary)] max-w-[300px] md:max-w-[425px] text-left leading-[1.7]">Experience ultimate relaxation with expert treatments in a tranquil spa, blending luxury, care, and eco-friendly wellness for rejuvenation.</div>
             </div>
-            <button href="#" class=" flex justify-between items-center inline-block bg-[var(--primary-color)] text-white pl-[.25rem] md:pl-6 px-4 py-2 mt-8 rounded-lg  md:w-[22rem] text-lg  hover:bg-[var(--active-primary-color)] transition self-start ml-[.25rem] md:ml-6">
+            <a href="#book-appointment" class=" flex justify-between items-center inline-block bg-[var(--primary-color)] text-white pl-[.25rem] md:pl-6 px-4 py-2 mt-8 rounded-lg  md:w-[22rem] text-lg  hover:bg-[var(--active-primary-color)] transition self-start ml-[.25rem] md:ml-6 ">
                 <p class="text-sm lg:text-base">Book an Appointment </p>
-                <a href="#"><img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt=""></a>
-            </button>
+               <img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt="">
+            </a>
         </div>
     </section>
    
@@ -101,13 +101,13 @@
         </div>
     </section>
     
-    <section id="about-us" class="flex flex-col md:flex-row items-center px-8 pt-20 pb-16 md:px-12 lg:px-20 gap-8">
+    <section id="about-us" class="flex flex-col md:flex-row md:justify-center items-center px-8 pt-20 pb-16 md:px-12 lg:px-20 gap-8">
         <div id="bar-section" class="flex items-end rounded-lg overflow-hidden max-w-[400px] md:max-w-full lg:min-w-[400px]">
             <div id="bars-wrapper" class="flex h-full">
                 <div class="bar h-14 w-3 bg-[var(--primary-color)] transition-[height]  duration-1000 delay-200"></div>
                 <div class="bar h-14 w-2 bg-[var(--bg-abt-us-bar-color)] transition-[height]  duration-1000 delay-200"></div>
             </div>
-        <img src="./assets/images/about-us.svg" alt="Spa Treatment" class="">
+        <img src="./assets/images/about-us.png" alt="Spa Treatment" class="">
         </div>
         <div class=" max-w-[400px]  lg:max-w-[600px]">
             <h2 class="text-[var(--primary-color)] text-4xl text-center md:text-left [font-family:var(--font-primary)]">About Us</h2>
@@ -301,6 +301,32 @@
         
         </div>
     </section>
+
+    <section id="book-appointment" class="flex flex-col items-center pt-10 mt-40">
+        <h2  class="text-4xl text-[var(--primary-color)] [font-family:var(--font-primary)]">Book Appointment</h2>
+        <h3  class="text-2xl lg:3xl [var(--tertiary-color)] text-center [font-family:var(--font-secondary)] my-4 max-w-[350px] md:max-w-[450px]">We are here for you...</h3>
+        <div class="flex flex-col bg-[var(--bg-primary)] w-4/5 mx-auto [font-family:var(--font-recommended-plan)] text-[.9rem] text-[var(--tertiary-color)] px-8 mt-16 py-12 rounded-lg">
+            <p class="mb-6">Quick Booking</p>
+            <h2 class="text-xl lg:2xl  text-[var(--send-a-message-color)] [font-family:var(--font-secondary)]">Appointment</h2>
+        <form class="flex flex-col mt-6" >
+            <div class="flex flex-col  md:flex-row gap-4 items-center justify-between">
+                <input type="text" placeholder="Full Name" class="w-full py-5 px-3 border rounded-lg mb-4 outline-none border border-[var(--tertiary-color)] focus:border-[var(--primary-color)] " required  >
+                <input type="time" value='Time' placeholder="Time" class="w-full py-5 px-3 border rounded-lg mb-4 outline-none border border-[var(--tertiary-color)] focus:border-[var(--primary-color)] " required  defaultvalue=''>
+            </div>
+            <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+                <select name="service" id="service" class="w-full py-5 px-3 border rounded-lg mb-4 outline-none border border-[var(--tertiary-color)] focus:border-[var(--primary-color)] text-[var(--form-placeholder-color)]" required value="" >
+                    <option value="select service" aria-placeholder="" class="w-full py-5 px-3 border rounded-lg mb-4 outline-none border border-[var(--tertiary-color)] focus:border-[var(--primary-color)] " >Select Service</option>
+                </select>
+                <input type="tel" placeholder="Phone" class="w-full py-5 px-3 border rounded-lg mb-4 outline-none border border-[var(--tertiary-color)] focus:border-[var(--primary-color)] " required  >
+            </div>    
+            <textarea placeholder="Note" class="w-full py-5 px-3 border rounded-lg mb-4 h-32 outline-none border border-[var(--tertiary-color)] focus:border-[var(--primary-color)] resize-none" required  ></textarea>
+            <button type="'submit"  class="self-end flex justify-between items-center gap-2 bg-[var(--primary-color)] hover:bg-[var(--active-primary-color)] text-white text-base px-4 py-2 mt-4 md:mt-8 w-50  rounded-lg transition">
+                <p class=" text-xs md:text-sm">Book an appointment</p>
+                <a class="w-8 md:w-auto"><img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt="link"></a>
+            </button>
+        </form>
+        </div>
+    </section>
     
     <section id="Testimonials" class="flex flex-col items-center mt-52 px-6 md:px-16 lg:px-32">
         <h2 class="text-4xl text-[var(--primary-color)] [font-family:var(--font-primary)]">Testimonials</h2>
@@ -420,9 +446,12 @@
             </a>
          </div>
     </section>
-    <section id="send-a-message" class="flex flex-col bg-[var(--bg-primary)] mt-40  w-4/5 mx-auto [font-family:var(--font-recommended-plan)] text-[.9rem] text-[var(--tertiary-color)] px-8 py-12 rounded-lg">
-        <h2 class="text-xl lg:2xl  text-[var(--send-a-message-color)] [font-family:var(--font-secondary)]">Send a Message</h2>
-        <p class="pt-2">Your email address will not be published. Required fields are marked *</p>
+    <section id="contact-us" class="flex flex-col items-center pt-10 mt-40">
+        <h2  class="text-4xl text-[var(--primary-color)] [font-family:var(--font-primary)]">Contact Us</h2>
+        <h3  class="text-2xl lg:3xl [var(--tertiary-color)] text-center [font-family:var(--font-secondary)] my-4 max-w-[350px] md:max-w-[450px]">Have Questions? Reach Out to Us</h3>
+        <div class="flex flex-col bg-[var(--bg-primary)] w-4/5 mx-auto [font-family:var(--font-recommended-plan)] text-[.9rem] text-[var(--tertiary-color)] px-8 mt-16 py-12 rounded-lg">
+            <h2 class="text-xl lg:2xl  text-[var(--send-a-message-color)] [font-family:var(--font-secondary)]">Send a Message</h2>
+            <p class="pt-2">Your email address will not be published. Required fields are marked *</p>
         <form class="flex flex-col mt-6 ">
             <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg mb-4 outline-none border border-[var(--tertiary-color)] focus:border-[var(--primary-color)] " required  >
             <input type="email" placeholder="Email" class="w-full p-3 border rounded-lg mb-4 outline-none border border-[var(--tertiary-color)] focus:border-[var(--primary-color)] " required >
@@ -432,6 +461,7 @@
                 <a class="w-8 md:w-auto"><img src="./assets/images/material-symbols_arrow-back-rounded.svg" alt="link"></a>
             </button>
         </form>
+        </div>
     </section>
 
     <section id="Subscribe"  class=" flex flex-col items-center my-32 w-full md:w-4/5 mx-auto px-4">
