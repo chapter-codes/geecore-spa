@@ -119,6 +119,7 @@ html{
 }
 #hero-content a{
   transform: translateY(200%);
+  transition: transform 2000ms ease-in-out;
 }
 
 /* when hero background image is loaded */
